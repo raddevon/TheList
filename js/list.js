@@ -1,3 +1,12 @@
+function MyList() {
+    // A user list
+    var existingCookie = $.cookie('my_list');
+
+    if(typeof existingCookie !== 'undefined') {
+        this.list = existingCookie;
+    }
+}
+
 (function( $ ){
     $.fn.colorSlide = function() {
         var trigger = $(this);
