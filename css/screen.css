@@ -1,1 +1,332 @@
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans|Montserrat+Subrayada:700);html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline}html{line-height:1}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}q,blockquote{quotes:none}q:before,q:after,blockquote:before,blockquote:after{content:"";content:none}a img{border:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}body{*zoom:1;padding-left:1em;padding-right:1em;margin-left:auto;margin-right:auto}body:after{content:"";display:table;clear:both}.detail{margin-left:10.18519%;margin-right:10.18519%;width:49.07407%;float:left;margin-right:1.85185%;display:inline}.list{width:28.7037%;float:right;margin-right:0;*margin-left:-1em;display:inline}* html{font-size:125%}html{font-size:20px;line-height:1.6em}body{font-family:"Noto Sans",sans-serif;font-weight:400}p{margin-top:0em;padding-top:0em;padding-bottom:0em;margin-bottom:1.6em}li{font-size:1.2em;line-height:1.33333em}h1{font-family:"Montserrat Subrayada",sans-serif;font-weight:700;font-size:3.2em;line-height:1.5em;margin-top:0em;padding-top:0em;padding-bottom:0em;margin-bottom:0.5em}body{background:#3b2d38}.list{background:#bcbdac;color:#1a1a1a}.detail{background:#3b2d38;color:#e6e6e6}html,body{height:100%}.list,.detail{padding:1em;height:100%}.detail{padding-top:8em}li{padding:0.5em}.today{border-left:0.65em solid #f02475;border-bottom:1px solid #1a1a1a}.soon{border-left:0.65em solid #f27435}.later{border-left:0.65em solid #cfbe27}
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans|Montserrat+Subrayada:700);
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* line 22, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1; }
+
+/* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 26, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 28, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+/* line 30, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none; }
+  /* line 103, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+/* line 32, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none; }
+
+/* line 116, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+/* line 14, ../../../../../../../Library/Ruby/Gems/1.8/gems/susy-1.0.8/sass/susy/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 13, ../sass/_grid.scss */
+body {
+  *zoom: 1;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 38, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  body:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* line 16, ../sass/_grid.scss */
+.list {
+  width: 100%;
+  float: left;
+  margin-right: 4.34783%;
+  display: inline; }
+
+/* line 18, ../sass/_grid.scss */
+.detail {
+  display: none; }
+
+@media (min-width: 49em) {
+  /* line 21, ../sass/_grid.scss */
+  .detail {
+    margin-left: 17.02128%;
+    width: 48.93617%;
+    float: left;
+    margin-right: 2.12766%;
+    display: block; }
+
+  /* line 26, ../sass/_grid.scss */
+  .list {
+    width: 31.91489%;
+    float: right;
+    margin-right: 0; } }
+@media (min-width: 81em) {
+  /* line 32, ../sass/_grid.scss */
+  .detail {
+    margin-left: 10.12658%;
+    margin-right: 10.12658%;
+    width: 39.24051%;
+    float: left;
+    margin-right: 1.26582%;
+    display: block; }
+
+  /* line 37, ../sass/_grid.scss */
+  .list {
+    width: 39.24051%;
+    float: right;
+    margin-right: 0; } }
+/* line 61, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+* html {
+  font-size: 125%; }
+
+/* line 64, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html {
+  font-size: 20px;
+  line-height: 1.6em; }
+
+/* line 12, ../sass/_typography.sass */
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400; }
+
+/* line 16, ../sass/_typography.sass */
+p {
+  margin-top: 0em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.6em; }
+
+/* line 19, ../sass/_typography.sass */
+li {
+  font-size: 1.2em;
+  line-height: 1.33333em; }
+
+/* line 22, ../sass/_typography.sass */
+h1 {
+  font-family: "Montserrat Subrayada", sans-serif;
+  font-weight: 700;
+  font-size: 3.2em;
+  line-height: 1.5em; }
+
+@font-face {
+  font-family: 'fontello';
+  src: url("../fonts/fontello.eot?65169114");
+  src: url("../fonts/fontello.eot?65169114#iefix") format("embedded-opentype"), url("../fonts/fontello.woff?65169114") format("woff"), url("../fonts/fontello.ttf?65169114") format("truetype"), url("../fonts/fontello.svg?65169114#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?65169114#fontello') format('svg');
+  }
+}
+*/
+/* line 22, ../sass/_icons.scss */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - magrins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+/* line 53, ../sass/_icons.scss */
+.icon-date:before {
+  content: '\e01f'; }
+
+/* '' */
+/* line 54, ../sass/_icons.scss */
+.icon-delete:before {
+  content: '\e04e'; }
+
+/* '' */
+/* line 55, ../sass/_icons.scss */
+.icon-add:before {
+  content: '\e05a'; }
+
+/* '' */
+/* line 56, ../sass/_icons.scss */
+.icon-notes:before {
+  content: '\e068'; }
+
+/* '' */
+/* line 57, ../sass/_icons.scss */
+.icon-check:before {
+  content: '\e070'; }
+
+/* '' */
+/* line 11, ../sass/_colors.sass */
+body {
+  background: #3b2d38; }
+
+/* line 13, ../sass/_colors.sass */
+.list {
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(26, 26, 26, 0.5)), color-stop(2%, rgba(26, 26, 26, 0)), color-stop(98%, rgba(26, 26, 26, 0)), color-stop(100%, rgba(26, 26, 26, 0.5))), #bcbdac;
+  background: -webkit-linear-gradient(left, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0) 2%, rgba(26, 26, 26, 0) 98%, rgba(26, 26, 26, 0.5)), #bcbdac;
+  background: -moz-linear-gradient(left, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0) 2%, rgba(26, 26, 26, 0) 98%, rgba(26, 26, 26, 0.5)), #bcbdac;
+  background: -o-linear-gradient(left, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0) 2%, rgba(26, 26, 26, 0) 98%, rgba(26, 26, 26, 0.5)), #bcbdac;
+  background: linear-gradient(left, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0) 2%, rgba(26, 26, 26, 0) 98%, rgba(26, 26, 26, 0.5)), #bcbdac;
+  color: #1a1a1a; }
+
+/* line 16, ../sass/_colors.sass */
+.detail {
+  background: #3b2d38;
+  color: #e6e6e6; }
+
+/* line 19, ../sass/_colors.sass */
+.add {
+  color: #1a1a1a;
+  -webkit-transition: color 0.2s ease-out;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition: color 0.2s ease-out 0.1s;
+  -o-transition: color 0.2s ease-out 0.1s;
+  transition: color 0.2s ease-out 0.1s; }
+  /* line 22, ../sass/_colors.sass */
+  .add:hover {
+    color: #f02475; }
+
+/* line 24, ../sass/_colors.sass */
+.color-slider {
+  -webkit-transition: width 0.5s ease-out;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition: width 0.5s ease-out 0.1s;
+  -o-transition: width 0.5s ease-out 0.1s;
+  transition: width 0.5s ease-out 0.1s; }
+
+/* line 27, ../sass/_colors.sass */
+.list a li {
+  -webkit-transition: color 0.5s ease-out;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition: color 0.5s ease-out 0.1s;
+  -o-transition: color 0.5s ease-out 0.1s;
+  transition: color 0.5s ease-out 0.1s; }
+/* line 29, ../sass/_colors.sass */
+.list a:link li, .list a:visited li {
+  color: #1a1a1a; }
+/* line 31, ../sass/_colors.sass */
+.list a:hover li {
+  color: #e6e6e6; }
+
+/* line 3, ../sass/_style.sass */
+html, body {
+  height: 100%; }
+
+/* line 5, ../sass/_style.sass */
+.list, .detail {
+  padding: 1em;
+  height: 100%; }
+
+/* line 8, ../sass/_style.sass */
+.detail {
+  padding-top: 8em; }
+
+/* line 10, ../sass/_style.sass */
+.list {
+  padding-left: 2em;
+  padding-right: 2em; }
+
+/* line 13, ../sass/_style.sass */
+li {
+  padding: 0.5em; }
+
+/* line 16, ../sass/_style.sass */
+.list a:link, .list a:active, .list a:visited {
+  text-decoration: none; }
+
+/* line 18, ../sass/_style.sass */
+#list-head {
+  overflow: hidden;
+  *zoom: 1;
+  position: relative;
+  margin-top: 0em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 0.5em; }
+  /* line 22, ../sass/_style.sass */
+  #list-head h1 {
+    float: left; }
+
+/* line 24, ../sass/_style.sass */
+.today {
+  border-left: 0.65em solid #f02475;
+  border-bottom: 1px solid #1a1a1a; }
+
+/* line 27, ../sass/_style.sass */
+.soon {
+  border-left: 0.65em solid #f27435; }
+
+/* line 29, ../sass/_style.sass */
+.later {
+  border-left: 0.65em solid #cfbe27; }
+
+/* line 31, ../sass/_style.sass */
+.add {
+  float: right;
+  font-size: 1.6em;
+  line-height: 2em;
+  position: absolute;
+  top: 20%;
+  right: 0; }

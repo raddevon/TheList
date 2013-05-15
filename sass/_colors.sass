@@ -11,8 +11,22 @@ $detail-text: $near-white
 body
     background: $dark
 .list
-    background: $gray
+    +background(linear-gradient(left, rgba($near-black, 0.5), rgba($near-black, 0) 2%, rgba($near-black, 0) 98%, rgba($near-black, 0.5)), $gray)
     color: $near-black
 .detail
     background: $dark
     color: $detail-text
+.add
+    color: $near-black
+    +transition(color 0.2s ease-out 0.1s)
+    &:hover
+        color: $pink
+.color-slider
+    +transition(width 0.5s ease-out 0.1s)
+.list
+    a li
+        +transition(color 0.5s ease-out 0.1s)
+    a:link li, a:visited li
+        color: $near-black
+    a:hover li
+        color: $near-white

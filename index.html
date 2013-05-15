@@ -15,13 +15,19 @@
         </p>
     </div>
     <div class="list">
-        <h1>The List</h1>
+        <div id="list-head">
+            <h1>The List</h1>
+            <a href="#"><span class="add"><i class="icon-add"></i></span></a>
+        </div>
         <ul>
-            <li class="today">Test</li>
+            <a href="#"><li class="today">Test</li></a>
         </ul>
     </div>
 
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/list.js"></script>
+    <script>
+        $('.list').find('li').colorSlide();
+    </script>
 </body>
 </html>

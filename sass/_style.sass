@@ -7,9 +7,20 @@ html, body
     height: 100%
 .detail
     padding-top: 8em
-
+.list
+    padding-left: 2em
+    padding-right: 2em
 li
     padding: 0.5em
+.list
+    a:link, a:active, a:visited
+        text-decoration: none
+#list-head
+    +clearfix
+    position: relative
+    +rhythm(0, 0, 0, 1, 64px)
+    h1
+        float: left
 .today
     border-left: $line-width solid $pink
     border-bottom: 1px solid $near-black
@@ -17,3 +28,9 @@ li
     border-left: $line-width solid $orange
 .later
     border-left: $line-width solid $yellow
+.add
+    float: right
+    +adjust-font-size-to(32px)
+    position: absolute
+    top: 20%
+    right: 0
