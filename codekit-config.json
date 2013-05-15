@@ -80,19 +80,10 @@
     },
     "\/css\/print.css" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/print.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
-    "\/config.rb" : {
-      "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/config.rb",
+      "inputAbbreviatedPath" : "\/css\/print.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 32768
     },
@@ -117,6 +108,18 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/_typography.css",
+      "fileType" : 2,
+      "debugStyle" : 0
+    },
+    "\/sass\/_layout.sass" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/_layout.sass",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_layout.css",
       "fileType" : 2,
       "debugStyle" : 0
     },
