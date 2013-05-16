@@ -94,10 +94,11 @@ li {
 
 /* line 31, ../sass/_layout.sass */
 .list {
-  padding-left: 1em;
-  padding-right: 1em;
   width: 96%;
   margin: 0 auto; }
+  /* line 34, ../sass/_layout.sass */
+  .list a {
+    display: block; }
 
 @media (min-width: 768px) {
   /* line 38, ../sass/_layout.sass */
@@ -113,25 +114,28 @@ li {
   .list {
     width: 50%;
     padding-left: 1.5em;
-    padding-right: 0.5em; } }
+    padding-right: 0.5em; }
+    /* line 47, ../sass/_layout.sass */
+    .list li {
+      margin-right: 1em; } }
 @media (min-width: 1025px) {
-  /* line 49, ../sass/_layout.sass */
+  /* line 51, ../sass/_layout.sass */
   .detail {
     width: 59%;
     padding-left: 3em;
     padding-right: 3em; }
 
-  /* line 53, ../sass/_layout.sass */
+  /* line 55, ../sass/_layout.sass */
   .list {
     width: 40%; } }
 @media (min-width: 1300px) {
-  /* line 57, ../sass/_layout.sass */
+  /* line 59, ../sass/_layout.sass */
   .detail {
     width: 66%;
     padding-left: 6em;
     padding-right: 6em; }
 
-  /* line 61, ../sass/_layout.sass */
+  /* line 63, ../sass/_layout.sass */
   .list {
     width: 33%; } }
 /* line 61, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
@@ -284,33 +288,32 @@ body {
   transition: width 0.5s ease-out 0.1s; }
 
 /* line 27, ../sass/_colors.sass */
-.list a li {
-  -webkit-transition: color 0.5s ease-out;
+.list a {
+  -webkit-transition: color 0.2s ease-out;
   -webkit-transition-delay: 0.1s;
-  -moz-transition: color 0.5s ease-out 0.1s;
-  -o-transition: color 0.5s ease-out 0.1s;
-  transition: color 0.5s ease-out 0.1s; }
+  -moz-transition: color 0.2s ease-out 0.1s;
+  -o-transition: color 0.2s ease-out 0.1s;
+  transition: color 0.2s ease-out 0.1s; }
 /* line 29, ../sass/_colors.sass */
-.list a:link li, .list a:visited li {
+.list a:link, .list a:visited {
   color: #1a1a1a; }
 /* line 31, ../sass/_colors.sass */
-.list a:hover li {
+.list a:hover {
   color: #e6e6e6; }
 
 /* line 3, ../sass/_style.sass */
 .today {
-  border-left: 0.65em solid #f02475;
-  border-bottom: 1px solid #1a1a1a; }
+  border-left: 0.65em solid #f02475; }
 
-/* line 6, ../sass/_style.sass */
+/* line 5, ../sass/_style.sass */
 .soon {
   border-left: 0.65em solid #f27435; }
 
-/* line 8, ../sass/_style.sass */
+/* line 7, ../sass/_style.sass */
 .later {
   border-left: 0.65em solid #cfbe27; }
 
-/* line 10, ../sass/_style.sass */
+/* line 9, ../sass/_style.sass */
 .add {
   float: right;
   font-size: 1.6em;

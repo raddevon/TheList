@@ -24,9 +24,9 @@ body
 .color-slider
     +transition(width 0.5s ease-out 0.1s)
 .list
-    a li
-        +transition(color 0.5s ease-out 0.1s)
-    a:link li, a:visited li
+    a
+        +transition(color 0.2s ease-out 0.1s)
+    a:link, a:visited
         color: $near-black
-    a:hover li
+    a:hover
         color: $near-white
