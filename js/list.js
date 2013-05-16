@@ -28,12 +28,15 @@ function MyList() {
             'z-index': 50
         }).offset(elPosition).appendTo(trigger);
 
-        trigger.on('mouseenter mouseleave', function(e) {
+        trigger.on('mouseenter mouseleave click', function(e) {
 
             if (e.type === 'mouseenter') {
                 colorSlider.css({ 'width': elWidth, 'height': elHeight });
             } else if (e.type === 'mouseleave') {
                 colorSlider.css('width', 0);
+            } else if (e.type === 'click') {
+                trigger.siblings(trigger.tagName).removeClass('active');
+                trigger.toggleClass('active');
             }
         });
     };

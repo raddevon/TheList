@@ -304,16 +304,25 @@ body {
 /* line 3, ../sass/_style.sass */
 .today {
   border-left: 0.65em solid #f02475; }
-
-/* line 5, ../sass/_style.sass */
-.soon {
-  border-left: 0.65em solid #f27435; }
+  /* line 5, ../sass/_style.sass */
+  .today.active {
+    background: #f02475; }
 
 /* line 7, ../sass/_style.sass */
+.soon {
+  border-left: 0.65em solid #f27435; }
+  /* line 9, ../sass/_style.sass */
+  .soon.active {
+    background: #f27435; }
+
+/* line 11, ../sass/_style.sass */
 .later {
   border-left: 0.65em solid #cfbe27; }
+  /* line 13, ../sass/_style.sass */
+  .later.active {
+    background: #cfbe27; }
 
-/* line 9, ../sass/_style.sass */
+/* line 15, ../sass/_style.sass */
 .add {
   float: right;
   font-size: 1.6em;
