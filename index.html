@@ -30,7 +30,7 @@
     <script src="js/jquery.cookie.js"></script>
     <script src="js/list.js"></script>
     <script>
-        $('.list').find('li').colorSlide();
+        $.each($('.list').find('li'), function(i,v) { $(v).colorSlide(); });
     </script>
 </body>
 </html>
