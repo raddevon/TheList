@@ -48,15 +48,6 @@
       "outputAbbreviatedPath" : "\/js\/jquery-1.9.1.min-ck.js",
       "fileType" : 64
     },
-    "\/index.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/sass\/_style.sass" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -68,6 +59,15 @@
       "outputAbbreviatedPath" : "\/css\/_style.css",
       "fileType" : 2,
       "debugStyle" : 0
+    },
+    "\/index.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/css\/ie.css" : {
       "ignoreWasSetByUser" : 0,
@@ -98,6 +98,15 @@
       "outputAbbreviatedPath" : "\/js\/list-ck-ck.js",
       "fileType" : 64
     },
+    "\/config.rb" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/config.rb",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 32768
+    },
     "\/sass\/_colors.sass" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -109,15 +118,6 @@
       "outputAbbreviatedPath" : "\/css\/_colors.css",
       "fileType" : 2,
       "debugStyle" : 0
-    },
-    "\/config.rb" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/config.rb",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 32768
     },
     "\/sass\/_typography.sass" : {
       "ignoreWasSetByUser" : 0,
