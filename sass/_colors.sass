@@ -5,6 +5,8 @@ $yellow     : #CFBE27
 $dark       : #3B2D38
 $near-white : darken(#fff, 10%)
 $near-black : lighten(#000, 10%)
+$darken     : rgba(#000, 0.2)
+$lighten    : rgba(#fff, 0.2)
 
 $detail-text: $near-white
 
@@ -33,6 +35,9 @@ body
         color: $near-black
     a:hover, .active a
         color: $near-white
+
+.list li input[type="text"]:focus
+    background: $lighten
 
 // List left border styling
 .list li.today
