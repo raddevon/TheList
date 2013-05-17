@@ -8,6 +8,9 @@ $near-black : lighten(#000, 10%)
 
 $detail-text: $near-white
 
+// Width of the left border of list items
+$line-width: 0.65em
+
 body
     background: $dark
 .list
@@ -30,3 +33,13 @@ body
         color: $near-black
     a:hover, .active a
         color: $near-white
+
+// List left border styling
+.today
+    border-left: $line-width solid $pink
+.soon
+    border-left: $line-width solid $orange
+.list li
+    // Default list item styling
+    +transition(color 0.2s ease-out 0.1s)
+    border-left: $line-width solid $yellow
