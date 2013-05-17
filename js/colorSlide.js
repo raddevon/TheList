@@ -42,13 +42,10 @@
         };
 
         var bindFocus = function() {
-            // to-do By unbinding 'click' altogether, I could interfere with other events bound to it. It would be better to name this function and unbind only it.
+            // todo By unbinding 'click' altogether, I could interfere with other events bound to it. It would be better to name this function and unbind only it.
             triggerElement.find('input')
                 .on('focus', function() {
                     triggerElement.sliderToggle().addClass('active').trigger('activated');
-                })
-                .on('blur', function() {
-                    triggerElement.sliderToggle().removeClass('active').trigger('deactivated');
                 });
         };
 
