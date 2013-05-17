@@ -22,13 +22,15 @@
         <ul>
             <li class="today"><a href="#">Test</a></li>
             <li class="soon"><a href="#">Test</a></li>
-            <li class="later"><a href="#">Test</a></li>
+            <li><a href="#">Test</a></li>
         </ul>
     </div>
 
     <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/utils.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script src="js/list.js"></script>
+    <script src="js/colorSlide.js"></script>
     <script>
         $.each($('.list').find('li'), function(i,v) { $(v).colorSlide(); });
     </script>
