@@ -3,7 +3,6 @@
         var triggerElement = $(this);
         var elWidth = triggerElement.outerWidth();
         var elHeight = triggerElement.outerHeight();
-        var elPosition = triggerElement.offset();
         var elColor = triggerElement.css('border-left-color');
 
         triggerElement.find('a').css({
@@ -17,8 +16,10 @@
             'width': 0,
             'height': elHeight,
             'position': 'absolute',
+            'top': 0,
+            'left': 0,
             'z-index': 50
-        }).offset(elPosition).appendTo(triggerElement);
+        }).appendTo(triggerElement);
 
         $.fn.sliderOn = function() {
             $(this).find('.color-slider').css('width', elWidth);

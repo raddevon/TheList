@@ -172,55 +172,57 @@ li {
   /* line 34, ../sass/_layout.sass */
   .list a {
     display: block; }
-
-/* line 37, ../sass/_layout.sass */
-.list li form {
-  position: relative;
-  z-index: 51; }
-  /* line 40, ../sass/_layout.sass */
-  .list li form input[type="text"] {
-    background: none;
-    border: none;
-    outline: none;
-    margin: 0;
-    width: 100%; }
+  /* line 36, ../sass/_layout.sass */
+  .list li {
+    position: relative; }
+    /* line 38, ../sass/_layout.sass */
+    .list li form {
+      position: relative;
+      z-index: 51; }
+      /* line 41, ../sass/_layout.sass */
+      .list li form input[type="text"] {
+        background: none;
+        border: none;
+        outline: none;
+        margin: 0;
+        width: 100%; }
 
 @media (min-width: 768px) {
-  /* line 48, ../sass/_layout.sass */
+  /* line 49, ../sass/_layout.sass */
   .list, .detail {
     float: left; }
 
-  /* line 50, ../sass/_layout.sass */
+  /* line 51, ../sass/_layout.sass */
   .detail {
     width: 49%;
     display: block; }
 
-  /* line 53, ../sass/_layout.sass */
+  /* line 54, ../sass/_layout.sass */
   .list {
     width: 50%;
     padding-left: 1.5em;
     padding-right: 0.5em; }
-    /* line 57, ../sass/_layout.sass */
+    /* line 58, ../sass/_layout.sass */
     .list li {
       margin-right: 1em; } }
 @media (min-width: 1025px) {
-  /* line 61, ../sass/_layout.sass */
+  /* line 62, ../sass/_layout.sass */
   .detail {
     width: 59%;
     padding-left: 3em;
     padding-right: 3em; }
 
-  /* line 65, ../sass/_layout.sass */
+  /* line 66, ../sass/_layout.sass */
   .list {
     width: 40%; } }
 @media (min-width: 1300px) {
-  /* line 69, ../sass/_layout.sass */
+  /* line 70, ../sass/_layout.sass */
   .detail {
     width: 66%;
     padding-left: 6em;
     padding-right: 6em; }
 
-  /* line 73, ../sass/_layout.sass */
+  /* line 74, ../sass/_layout.sass */
   .list {
     width: 33%; } }
 /* line 61, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
