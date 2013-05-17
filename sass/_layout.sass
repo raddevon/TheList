@@ -35,6 +35,7 @@ li
         display: block
     li
         position: relative
+        +transition(opacity 0.2s ease-out)
         form
             position: relative
             z-index: 51
@@ -44,6 +45,8 @@ li
                 outline: none
                 margin: 0
                 width: 100%
+.new-item
+    opacity:0
 
 +breakpoint($tablet)
     .list, .detail
