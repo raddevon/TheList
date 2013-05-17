@@ -21,7 +21,7 @@ function MyList() {
     }
 
     function newItem() {
-        var item = $('<li></li>')
+        var item = $('<li><form action=""><input type="text" /></form></li>')
         if ($('.list li').length > 0) {
 
         }
