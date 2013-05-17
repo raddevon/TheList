@@ -41,19 +41,15 @@
             return this;
         };
 
-        var bindClickOn = function() {
+        var bindFocus = function() {
             // to-do By unbinding 'click' altogether, I could interfere with other events bound to it. It would be better to name this function and unbind only it.
-            triggerElement.unbind('click').on('click', function(e) {
-                e.preventDefault();
-                triggerElement.sliderToggle().addClass('active').trigger('activated');
-            });
-        };
-
-        var bindClickOff = function() {
-            triggerElement.unbind('click').on('click', function(e) {
-                e.preventDefault();
-                triggerElement.sliderToggle().removeClass('active').trigger('deactivated');
-            });
+            triggerElement.find('input')
+                .on('focus', function() {
+                    triggerElement.sliderToggle().addClass('active').trigger('activated');
+                })
+                .on('blur', function() {
+                    triggerElement.sliderToggle().removeClass('active').trigger('deactivated');
+                });
         };
 
         var bindMouseenter = function () {
@@ -73,33 +69,19 @@
                 triggerElement
                     .unbind('mouseleave')
                     .siblings().sliderOff().trigger('deactivated');
-                bindClickOff();
             });
         };
 
         var bindDeactivated = function () {
             triggerElement.on('deactivated', function() {
                 bindMouseleave();
-                bindClickOn();
             });
         };
 
-        bindClickOn();
+        bindFocus();
         bindMouseenter();
         bindMouseleave();
         bindActivated();
         bindDeactivated();
-
-        // triggerElement.on('mouseenter mouseleave click', function(e) {
-
-        //     if (e.type === 'mouseenter') {
-        //         sliderOn();
-        //     } else if (e.type === 'mouseleave') {
-        //         sliderOff();
-        //     } else if (e.type === 'click') {
-        //         triggerElement.siblings(triggerElement.tagName).removeClass('active');
-        //         triggerElement.toggleClass('active');
-        //     }
-        // });
     };
 })( jQuery );
