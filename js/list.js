@@ -1,111 +1,29 @@
 function MyList() {
     // A user list
-    var existingCookie = $.cookie('my_list');
 
-    if (typeof existingCookie !== 'undefined') {
-        this.list = existingCookie;
+    function openExisting() {
+        if (supports_html5_storage()) {
+            this.theList = localStorage.getItem('theList');
+        } else {
+            $.cookie.json = true;
+            this.theList = $.cookie('the_list');
+        }
+    }
+
+    function saveList() {
+        // todo Create the JSON object for the list and store in this.theList
+        this.theListString = JSON.stringify(this.theList);
+        if (supports_html5_storage()) {
+            localStorage.setItem('theList', this.theListString);
+        } else {
+            $.cookie('the_list', this.theListString);
+        }
+    }
+
+    function newItem() {
+        var item = $('<li></li>')
+        if ($('.list li').length > 0) {
+
+        }
     }
 }
-
-(function( $ ){
-    $.fn.colorSlide = function() {
-        var triggerElement = $(this);
-        var elWidth = triggerElement.outerWidth();
-        var elHeight = triggerElement.outerHeight();
-        var elPosition = triggerElement.offset();
-        var elColor = triggerElement.css('border-left-color');
-
-        triggerElement.find('a').css({
-            'position': 'relative',
-            'z-index': 51
-        });
-
-        var colorSlider = $('<div class="color-slider"></div>');
-        colorSlider.css({
-            'background': elColor,
-            'width': 0,
-            'height': elHeight,
-            'position': 'absolute',
-            'z-index': 50
-        }).offset(elPosition).appendTo(triggerElement);
-
-        $.fn.sliderOn = function() {
-            $(this).find('.color-slider').css('width', elWidth);
-            return this;
-        };
-
-        $.fn.sliderOff = function() {
-            $(this).find('.color-slider').css('width', 0);
-            $(this).removeClass('active').trigger('deactivated');
-            return this;
-        };
-
-        $.fn.sliderToggle = function() {
-            var currentSlider = $(this).find('.color-slider');
-            if (currentSlider.css('width') > 0) {
-                $(this).sliderOff();
-            } else {
-                $(this).sliderOn();
-            }
-            return this;
-        };
-
-        var bindClickOn = function() {
-            triggerElement.on('click', function() {
-                triggerElement.sliderToggle().addClass('active').trigger('activated');
-            });
-        };
-
-        var bindClickOff = function() {
-            triggerElement.on('click', function() {
-                triggerElement.sliderToggle().removeClass('active').trigger('deactivated');
-            });
-        };
-
-        var bindMouseenter = function () {
-            triggerElement.on('mouseenter', function() {
-                triggerElement.sliderOn();
-            });
-        };
-
-        var bindMouseleave = function () {
-            triggerElement.on('mouseleave', function() {
-                triggerElement.sliderOff();
-            });
-        };
-
-        var bindActivated = function () {
-            triggerElement.on('activated', function() {
-                triggerElement
-                    .unbind('mouseleave')
-                    .siblings().sliderOff().trigger('deactivated');
-                bindClickOff();
-            });
-        };
-
-        var bindDeactivated = function () {
-            triggerElement.on('deactivated', function() {
-                bindMouseleave();
-                bindClickOn();
-            });
-        };
-
-        bindClickOn();
-        bindMouseenter();
-        bindMouseleave();
-        bindActivated();
-        bindDeactivated();
-
-        // triggerElement.on('mouseenter mouseleave click', function(e) {
-
-        //     if (e.type === 'mouseenter') {
-        //         sliderOn();
-        //     } else if (e.type === 'mouseleave') {
-        //         sliderOff();
-        //     } else if (e.type === 'click') {
-        //         triggerElement.siblings(triggerElement.tagName).removeClass('active');
-        //         triggerElement.toggleClass('active');
-        //     }
-        // });
-    };
-})( jQuery );
