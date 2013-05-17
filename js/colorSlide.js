@@ -43,13 +43,15 @@
 
         var bindClickOn = function() {
             // to-do By unbinding 'click' altogether, I could interfere with other events bound to it. It would be better to name this function and unbind only it.
-            triggerElement.unbind('click').on('click', function() {
+            triggerElement.unbind('click').on('click', function(e) {
+                e.preventDefault();
                 triggerElement.sliderToggle().addClass('active').trigger('activated');
             });
         };
 
         var bindClickOff = function() {
-            triggerElement.unbind('click').on('click', function() {
+            triggerElement.unbind('click').on('click', function(e) {
+                e.preventDefault();
                 triggerElement.sliderToggle().removeClass('active').trigger('deactivated');
             });
         };

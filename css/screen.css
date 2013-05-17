@@ -249,11 +249,11 @@ h1 {
   content: '\e070'; }
 
 /* '' */
-/* line 11, ../sass/_colors.sass */
+/* line 14, ../sass/_colors.sass */
 body {
   background: #3b2d38; }
 
-/* line 13, ../sass/_colors.sass */
+/* line 16, ../sass/_colors.sass */
 .list {
   background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(26, 26, 26, 0.5)), color-stop(2%, rgba(26, 26, 26, 0)), color-stop(98%, rgba(26, 26, 26, 0)), color-stop(100%, rgba(26, 26, 26, 0.5))), #bcbdac;
   background: -webkit-linear-gradient(left, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0) 2%, rgba(26, 26, 26, 0) 98%, rgba(26, 26, 26, 0.5)), #bcbdac;
@@ -262,12 +262,12 @@ body {
   background: linear-gradient(left, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0) 2%, rgba(26, 26, 26, 0) 98%, rgba(26, 26, 26, 0.5)), #bcbdac;
   color: #1a1a1a; }
 
-/* line 16, ../sass/_colors.sass */
+/* line 19, ../sass/_colors.sass */
 .detail {
   background: #3b2d38;
   color: #e6e6e6; }
 
-/* line 19, ../sass/_colors.sass */
+/* line 22, ../sass/_colors.sass */
 .add {
   color: #1a1a1a;
   -webkit-transition: color 0.2s ease-out;
@@ -275,11 +275,11 @@ body {
   -moz-transition: color 0.2s ease-out 0.1s;
   -o-transition: color 0.2s ease-out 0.1s;
   transition: color 0.2s ease-out 0.1s; }
-  /* line 22, ../sass/_colors.sass */
+  /* line 25, ../sass/_colors.sass */
   .add:hover {
     color: #f02475; }
 
-/* line 24, ../sass/_colors.sass */
+/* line 27, ../sass/_colors.sass */
 .color-slider {
   -webkit-transition: width 0.5s ease-out;
   -webkit-transition-delay: 0.1s;
@@ -287,33 +287,38 @@ body {
   -o-transition: width 0.5s ease-out 0.1s;
   transition: width 0.5s ease-out 0.1s; }
 
-/* line 27, ../sass/_colors.sass */
+/* line 30, ../sass/_colors.sass */
 .list a {
   -webkit-transition: color 0.2s ease-out;
   -webkit-transition-delay: 0.1s;
   -moz-transition: color 0.2s ease-out 0.1s;
   -o-transition: color 0.2s ease-out 0.1s;
   transition: color 0.2s ease-out 0.1s; }
-/* line 29, ../sass/_colors.sass */
+/* line 32, ../sass/_colors.sass */
 .list a:link, .list a:visited {
   color: #1a1a1a; }
-/* line 31, ../sass/_colors.sass */
+/* line 34, ../sass/_colors.sass */
 .list a:hover, .list .active a {
   color: #e6e6e6; }
 
-/* line 3, ../sass/_style.sass */
-.today {
+/* line 38, ../sass/_colors.sass */
+.list li.today {
   border-left: 0.65em solid #f02475; }
 
-/* line 5, ../sass/_style.sass */
-.soon {
+/* line 40, ../sass/_colors.sass */
+.list li.soon {
   border-left: 0.65em solid #f27435; }
 
-/* line 7, ../sass/_style.sass */
-.later {
+/* line 42, ../sass/_colors.sass */
+.list li {
+  -webkit-transition: color 0.2s ease-out;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition: color 0.2s ease-out 0.1s;
+  -o-transition: color 0.2s ease-out 0.1s;
+  transition: color 0.2s ease-out 0.1s;
   border-left: 0.65em solid #cfbe27; }
 
-/* line 9, ../sass/_style.sass */
+/* line 1, ../sass/_style.sass */
 .add {
   float: right;
   font-size: 1.6em;
