@@ -17,9 +17,6 @@ html, body
     h1
         float: left
 
-li
-    padding: 0.5em
-
 .list, .detail
     padding: 1em
     height: 100%
@@ -35,7 +32,8 @@ li
         display: block
     li
         position: relative
-        +transition(opacity 0.2s ease-out)
+        padding: 0.5em
+        +transition(opacity 0.2s ease-out, top 0.2s ease-out)
         form
             position: relative
             z-index: 51
@@ -44,9 +42,12 @@ li
                 border: none
                 outline: none
                 margin: 0
+                padding: 0
                 width: 100%
-.new-item
-    opacity:0
+
+// todo Commented until I can fix the new item animation
+// .new-item
+//     opacity: 0
 
 +breakpoint($tablet)
     .list, .detail

@@ -174,55 +174,60 @@ li {
     display: block; }
   /* line 36, ../sass/_layout.sass */
   .list li {
-    position: relative; }
-    /* line 38, ../sass/_layout.sass */
+    position: relative;
+    -webkit-transition: opacity 0.2s ease-out, top 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out, top 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out, top 0.2s ease-out;
+    transition: opacity 0.2s ease-out, top 0.2s ease-out; }
+    /* line 39, ../sass/_layout.sass */
     .list li form {
       position: relative;
       z-index: 51; }
-      /* line 41, ../sass/_layout.sass */
+      /* line 42, ../sass/_layout.sass */
       .list li form input[type="text"] {
         background: none;
         border: none;
         outline: none;
         margin: 0;
+        padding: 0;
         width: 100%; }
 
 @media (min-width: 768px) {
-  /* line 49, ../sass/_layout.sass */
+  /* line 53, ../sass/_layout.sass */
   .list, .detail {
     float: left; }
 
-  /* line 51, ../sass/_layout.sass */
+  /* line 55, ../sass/_layout.sass */
   .detail {
     width: 49%;
     display: block; }
 
-  /* line 54, ../sass/_layout.sass */
+  /* line 58, ../sass/_layout.sass */
   .list {
     width: 50%;
     padding-left: 1.5em;
     padding-right: 0.5em; }
-    /* line 58, ../sass/_layout.sass */
+    /* line 62, ../sass/_layout.sass */
     .list li {
       margin-right: 1em; } }
 @media (min-width: 1025px) {
-  /* line 62, ../sass/_layout.sass */
+  /* line 66, ../sass/_layout.sass */
   .detail {
     width: 59%;
     padding-left: 3em;
     padding-right: 3em; }
 
-  /* line 66, ../sass/_layout.sass */
+  /* line 70, ../sass/_layout.sass */
   .list {
     width: 40%; } }
 @media (min-width: 1300px) {
-  /* line 70, ../sass/_layout.sass */
+  /* line 74, ../sass/_layout.sass */
   .detail {
     width: 66%;
     padding-left: 6em;
     padding-right: 6em; }
 
-  /* line 74, ../sass/_layout.sass */
+  /* line 78, ../sass/_layout.sass */
   .list {
     width: 33%; } }
 /* line 61, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
