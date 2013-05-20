@@ -24,6 +24,7 @@
             <li class="today"><form action=""><input type="text" value="List item 2" /></form></li>
             <li class="soon"><form action=""><input type="text" value="List item 3" /></form></li>
             <li><form action=""><input type="text" value="List item 4" /></form></li>
+            <li>Plain text list item</li>
         </ul>
     </div>
 
@@ -34,8 +35,10 @@
     <script src="js/list.js"></script>
     <script src="js/colorSlide.js"></script>
     <script>
-        $.each($('.list').find('li'), function(i,v) { $(v).colorSlide(); });
-        $('.add').newItem();
+        $(document).ready(function() {
+            $.each($('.list').find('li'), function(i,v) { $(v).colorSlide(); });
+            $('.add').newItem();
+        });
     </script>
 </body>
 </html>
