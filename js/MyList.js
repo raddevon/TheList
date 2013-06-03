@@ -12,6 +12,7 @@ function MyList() {
 
     function saveList() {
         // todo Create the JSON object for the list and store in this.theList
+        $.map()
         this.theListString = JSON.stringify(this.theList);
         if (supports_html5_storage()) {
             localStorage.setItem('theList', this.theListString);

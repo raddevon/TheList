@@ -1,1 +1,2 @@
-function supports_html5_storage(){try{return"localStorage"in window&&window.localStorage!==null}catch(e){return!1}};
+// Detect local storage support
+function supports_html5_storage(){try{return"localStorage"in window&&window.localStorage!==null}catch(e){return!1}}String.prototype.hashCode=function(){var e=0,t,n;if(this.length==0)return e;for(t=0,l=this.length;t<l;t++){n=this.charCodeAt(t);e=(e<<5)-e+n;e|=0}return e};
