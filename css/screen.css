@@ -112,18 +112,22 @@ body {
   color: #e6e6e6; }
 
 /* line 39, ../sass/_colors.sass */
-.list li input[type="text"]:focus {
+#details {
+  color: inherit; }
+
+/* line 42, ../sass/_colors.sass */
+.list li input[type="text"]:focus, #details:focus {
   background: rgba(255, 255, 255, 0.2); }
 
-/* line 43, ../sass/_colors.sass */
+/* line 46, ../sass/_colors.sass */
 .list li.today {
   border-left: 0.65em solid #f02475; }
 
-/* line 45, ../sass/_colors.sass */
+/* line 48, ../sass/_colors.sass */
 .list li.soon {
   border-left: 0.65em solid #f27435; }
 
-/* line 47, ../sass/_colors.sass */
+/* line 50, ../sass/_colors.sass */
 .list li {
   -webkit-transition: color 0.2s ease-out;
   -webkit-transition-delay: 0.1s;
@@ -152,82 +156,85 @@ html, body {
     float: left; }
 
 /* line 20, ../sass/_layout.sass */
-li {
-  padding: 0.5em; }
-
-/* line 23, ../sass/_layout.sass */
 .list, .detail {
   padding: 1em;
   height: 100%; }
 
-/* line 27, ../sass/_layout.sass */
+/* line 24, ../sass/_layout.sass */
 .detail {
   padding-top: 8em;
   display: none; }
 
-/* line 31, ../sass/_layout.sass */
+/* line 28, ../sass/_layout.sass */
 .list {
   width: 96%;
   margin: 0 auto; }
-  /* line 34, ../sass/_layout.sass */
+  /* line 31, ../sass/_layout.sass */
   .list a {
     display: block; }
-  /* line 36, ../sass/_layout.sass */
+  /* line 33, ../sass/_layout.sass */
   .list li {
     position: relative;
+    padding: 0.5em;
     -webkit-transition: opacity 0.2s ease-out, top 0.2s ease-out;
     -moz-transition: opacity 0.2s ease-out, top 0.2s ease-out;
     -o-transition: opacity 0.2s ease-out, top 0.2s ease-out;
     transition: opacity 0.2s ease-out, top 0.2s ease-out; }
-    /* line 39, ../sass/_layout.sass */
+    /* line 37, ../sass/_layout.sass */
     .list li form {
       position: relative;
       z-index: 51; }
-      /* line 42, ../sass/_layout.sass */
-      .list li form input[type="text"] {
-        background: none;
-        border: none;
-        outline: none;
-        margin: 0;
-        padding: 0;
-        width: 100%; }
+
+/* line 41, ../sass/_layout.sass */
+input[type="text"], #details {
+  background: none;
+  resize: none;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
+/* line 50, ../sass/_layout.sass */
+#details {
+  height: 11em; }
 
 @media (min-width: 768px) {
-  /* line 53, ../sass/_layout.sass */
+  /* line 58, ../sass/_layout.sass */
   .list, .detail {
     float: left; }
 
-  /* line 55, ../sass/_layout.sass */
+  /* line 60, ../sass/_layout.sass */
   .detail {
     width: 49%;
     display: block; }
 
-  /* line 58, ../sass/_layout.sass */
+  /* line 63, ../sass/_layout.sass */
   .list {
     width: 50%;
     padding-left: 1.5em;
     padding-right: 0.5em; }
-    /* line 62, ../sass/_layout.sass */
+    /* line 67, ../sass/_layout.sass */
     .list li {
       margin-right: 1em; } }
 @media (min-width: 1025px) {
-  /* line 66, ../sass/_layout.sass */
+  /* line 71, ../sass/_layout.sass */
   .detail {
     width: 59%;
     padding-left: 3em;
     padding-right: 3em; }
 
-  /* line 70, ../sass/_layout.sass */
+  /* line 75, ../sass/_layout.sass */
   .list {
     width: 40%; } }
 @media (min-width: 1300px) {
-  /* line 74, ../sass/_layout.sass */
+  /* line 79, ../sass/_layout.sass */
   .detail {
     width: 66%;
     padding-left: 6em;
     padding-right: 6em; }
 
-  /* line 78, ../sass/_layout.sass */
+  /* line 83, ../sass/_layout.sass */
   .list {
     width: 33%; } }
 /* line 61, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
@@ -257,7 +264,7 @@ li {
   line-height: 1.33333em; }
 
 /* line 22, ../sass/_typography.sass */
-.list li form input[type="text"] {
+.list li form input[type="text"], #details {
   font-family: inherit;
   font-size: inherit; }
 
