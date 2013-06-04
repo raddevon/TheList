@@ -1,5 +1,6 @@
 function MyList() {
     // A user list
+    this.item = [];
 
     function openExisting() {
         if (supports_html5_storage()) {
