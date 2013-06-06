@@ -17,11 +17,11 @@ html, body
     h1
         float: left
 
-.list, .detail
+.list, .detail-column
     padding: 1em
     height: 100%
 
-.detail
+.detail-column
     padding-top: 8em
     display: none
 
@@ -49,15 +49,19 @@ input[type="text"], #details
 
 #details
     height: 11em
+    display: none
+
+#intro
+    display: none
 
 // todo Commented until I can fix the new item animation
 // .new-item
 //     opacity: 0
 
 +breakpoint($tablet)
-    .list, .detail
+    .list, .detail-column
         float: left
-    .detail
+    .detail-column
         width: 49%
         display: block
     .list
@@ -66,9 +70,11 @@ input[type="text"], #details
         padding-right: 0.5em
         li
             margin-right: 1em
+    #intro
+        display: block
 
 +breakpoint($desktop)
-    .detail
+    .detail-column
         width: 59%
         padding-left: 3em
         padding-right: 3em
@@ -76,7 +82,7 @@ input[type="text"], #details
         width: 40%
 
 +breakpoint($large-desktop)
-    .detail
+    .detail-column
         width: 66%
         padding-left: 6em
         padding-right: 6em

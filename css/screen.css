@@ -73,7 +73,7 @@ body {
   color: #1a1a1a; }
 
 /* line 21, ../sass/_colors.sass */
-.detail {
+.detail-column {
   background: #3b2d38;
   color: #e6e6e6; }
 
@@ -156,12 +156,12 @@ html, body {
     float: left; }
 
 /* line 20, ../sass/_layout.sass */
-.list, .detail {
+.list, .detail-column {
   padding: 1em;
   height: 100%; }
 
 /* line 24, ../sass/_layout.sass */
-.detail {
+.detail-column {
   padding-top: 8em;
   display: none; }
 
@@ -197,44 +197,53 @@ input[type="text"], #details {
 
 /* line 50, ../sass/_layout.sass */
 #details {
-  height: 11em; }
+  height: 11em;
+  display: none; }
+
+/* line 54, ../sass/_layout.sass */
+#intro {
+  display: none; }
 
 @media (min-width: 768px) {
-  /* line 58, ../sass/_layout.sass */
-  .list, .detail {
+  /* line 62, ../sass/_layout.sass */
+  .list, .detail-column {
     float: left; }
 
-  /* line 60, ../sass/_layout.sass */
-  .detail {
+  /* line 64, ../sass/_layout.sass */
+  .detail-column {
     width: 49%;
     display: block; }
 
-  /* line 63, ../sass/_layout.sass */
+  /* line 67, ../sass/_layout.sass */
   .list {
     width: 50%;
     padding-left: 1.5em;
     padding-right: 0.5em; }
-    /* line 67, ../sass/_layout.sass */
+    /* line 71, ../sass/_layout.sass */
     .list li {
-      margin-right: 1em; } }
+      margin-right: 1em; }
+
+  /* line 73, ../sass/_layout.sass */
+  #intro {
+    display: block; } }
 @media (min-width: 1025px) {
-  /* line 71, ../sass/_layout.sass */
-  .detail {
+  /* line 77, ../sass/_layout.sass */
+  .detail-column {
     width: 59%;
     padding-left: 3em;
     padding-right: 3em; }
 
-  /* line 75, ../sass/_layout.sass */
+  /* line 81, ../sass/_layout.sass */
   .list {
     width: 40%; } }
 @media (min-width: 1300px) {
-  /* line 79, ../sass/_layout.sass */
-  .detail {
+  /* line 85, ../sass/_layout.sass */
+  .detail-column {
     width: 66%;
     padding-left: 6em;
     padding-right: 6em; }
 
-  /* line 83, ../sass/_layout.sass */
+  /* line 89, ../sass/_layout.sass */
   .list {
     width: 33%; } }
 /* line 61, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */

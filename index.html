@@ -6,7 +6,12 @@
     <link rel="stylesheet" href="css/screen.css">
 </head>
 <body>
-    <div class="detail">
+    <div class="detail-column">
+        <div id="intro">
+            <p>
+                Welcome to The List. It's an app for making an ephemeral list. That means the list only lasts while you're here. Once you leave the page, it's gone!
+            </p>
+        </div>
         <form><textarea name="details" id="details" placeholder="Enter details for the currently selected list item"></textarea></form>
     </div>
     <div class="list">
@@ -15,11 +20,7 @@
             <a href="#"><span class="add"><i class="icon-add"></i></span></a>
         </div>
         <ul>
-            <li><form><input type="text" value="List item 1"/></form></li>
-            <li class="today"><form action=""><input type="text" value="List item 2" /></form></li>
-            <li class="soon"><form action=""><input type="text" value="List item 3" /></form></li>
-            <li><form action=""><input type="text" value="List item 4" /></form></li>
-            <li>Plain text list item</li>
+            <li><form><input type="text" placeholder="Start making your list"/></form></li>
         </ul>
     </div>
 
