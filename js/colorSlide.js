@@ -45,8 +45,8 @@
         var bindFocus = function() {
             var target = triggerElement.find('input');
             $(document)
-                .on('focus', target, function() {
-                    triggerElement.sliderToggle().addClass('active').trigger('activated');
+                .on('focus', 'input', function() {
+                    $(this).closest('li').sliderOn().addClass('active').trigger('activated');
                 });
         };
 

@@ -18,7 +18,7 @@ function MyList() {
     };
 
     this.save = function(index) {
-        var listString = JSON.stringify(this.item)
+        var listString = JSON.stringify(this.item);
         if (supports_html5_storage()) {
             localStorage.setItem('theList', listString);
         } else {
