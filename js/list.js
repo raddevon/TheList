@@ -1,21 +1,24 @@
 var currentList;
 
-function makeNewItem(bottom) {
+function makeNewItem(count) {
     var item = $('<li class="new"><form action=""><input type="text" /></form></li>');
-    if (bottom) {
-        item.appendTo($('.list ul')).removeClass('new');
-    } else if ($('.list li').length === 0 && $('.list li').first().val()) {
-        item.prependTo($('.list ul')).removeClass('new');
-    } else {
-        $('.list li').css('top', $('.list li').outerHeight());
-        item.prependTo($('.list ul')).removeClass('new');
-        $('.list li').css('top', 0);
+
+    count = count || 1;
+
+    for (var i = 0; i < count; i++) {
+        if ($('.list li').length === 0 && $('.list li').first().val()) {
+            item.clone().prependTo($('.list ul')).removeClass('new');
+        } else {
+            $('.list li').css('top', $('.list li').outerHeight());
+            item.clone().prependTo($('.list ul')).removeClass('new');
+            $('.list li').css('top', 0);
+        }
     }
 }
 
 function removeItem(index) {
     currentList.item.splice(index, 1);
-    $('.list li:eq(' + index + ')').remove();
+    $('.list li').eq(index).remove();
 }
 
 // newItem plugin allows an element to create new items in the list
@@ -40,6 +43,7 @@ $(document).on('input propertychange', 'input', function () {
     $(this).data('timeout', setTimeout(function () {
         var currentIndex = currentItem.parent().parent().index();
         currentList.item[currentIndex] = currentItem.val();
+        currentList.save();
     }, 5000));
 });
 
@@ -56,6 +60,7 @@ $(document).on('input propertychange', 'textarea', function () {
     $(this).data('timeout', setTimeout(function () {
         var currentIndex = detailsElement.data('index');
         currentList.item[currentIndex].details = details;
+        currentList.save();
     }, 5000));
 });
 
@@ -100,15 +105,15 @@ $(document).ready(function() {
 
     // Load the existing list from the hard drive
     currentList.load();
+
     // Remove the first empty item before loading a saved list
     if (currentList.item) {
         $('.list li').first().remove();
     }
-    // Reverse the list to load the items in the correct order
-    reversedList = currentList.item.reverse();
+
     // For each item in the stored list, create a new item in the on-screen list and load the value into it
-    $.map(reversedList, function(item) {
-        makeNewItem();
-        $('.list li').first().find('input').val(item);
+    makeNewItem(currentList.item.length);
+    $.map(currentList.item, function(item, index) {
+        $('.list li ').eq(index).find('input').val(item);
     });
-})
+});

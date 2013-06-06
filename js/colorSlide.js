@@ -43,9 +43,9 @@
         };
 
         var bindFocus = function() {
-            // todo By unbinding 'click' altogether, I could interfere with other events bound to it. It would be better to name this function and unbind only it.
-            triggerElement.find('input')
-                .on('focus', function() {
+            var target = triggerElement.find('input');
+            $(document)
+                .on('focus', target, function() {
                     triggerElement.sliderToggle().addClass('active').trigger('activated');
                 });
         };
