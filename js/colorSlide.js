@@ -1,85 +1,79 @@
 (function( $ ){
     $.fn.colorSlide = function() {
-        var triggerElement = $(this);
-        var elWidth = triggerElement.outerWidth();
-        var elHeight = triggerElement.outerHeight();
-        var elColor = triggerElement.css('border-left-color');
+        return this.each(function() {
+            // var $(this) = $(this);
+            var elWidth = $(this).outerWidth();
+            var elHeight = $(this).outerHeight();
+            var elColor = $(this).css('border-left-color');
 
-        triggerElement.find('a').css({
-            'position': 'relative',
-            'z-index': 51
-        });
+            $(this).find('a').css({
+                'position': 'relative',
+                'z-index': 51
+            });
 
-        var colorSlider = $('<div class="color-slider"></div>');
-        colorSlider.css({
-            'background': elColor,
-            'width': 0,
-            'height': elHeight,
-            'position': 'absolute',
-            'top': 0,
-            'left': 0,
-            'z-index': 50
-        }).appendTo(triggerElement);
+            var colorSlider = $('<div class="color-slider"></div>');
+            colorSlider.css({
+                'background': elColor,
+                'width': 0,
+                'height': elHeight,
+                'position': 'absolute',
+                'top': 0,
+                'left': 0,
+                'z-index': 50
+            }).appendTo($(this));
 
-        $.fn.sliderOn = function() {
-            $(this).find('.color-slider').css('width', elWidth);
-            return this;
-        };
+            $.fn.sliderOn = function() {
+                $(this).find('.color-slider').css('width', elWidth);
+                return this;
+            };
 
-        $.fn.sliderOff = function() {
-            $(this).find('.color-slider').css('width', 0);
-            $(this).removeClass('active').trigger('deactivated');
-            return this;
-        };
+            $.fn.sliderOff = function() {
+                $(this).find('.color-slider').css('width', 0);
+                $(this).closest('li').trigger('deactivated');
+                return this;
+            };
 
-        $.fn.sliderToggle = function() {
-            var currentSlider = $(this).find('.color-slider');
-            if (currentSlider.css('width') > 0) {
-                $(this).sliderOff();
-            } else {
-                $(this).sliderOn();
-            }
-            return this;
-        };
+            $.fn.sliderToggle = function() {
+                var currentSlider = $(this).find('.color-slider');
+                if (currentSlider.css('width') > 0) {
+                    $(this).sliderOff();
+                } else {
+                    $(this).sliderOn();
+                }
+                return this;
+            };
 
-        var bindFocus = function() {
-            var target = triggerElement.find('input');
-            $(document)
-                .on('focus', 'input', function() {
-                    $(this).closest('li').sliderOn().addClass('active').trigger('activated');
+            var bindMouseenter = function () {
+                $(this).on('mouseenter', function() {
+                    $(this).sliderOn();
                 });
-        };
+            };
 
-        var bindMouseenter = function () {
-            triggerElement.on('mouseenter', function() {
-                triggerElement.sliderOn();
-            });
-        };
+            var bindMouseleave = function () {
+                $(this).on('mouseleave', function() {
+                    $(this).sliderOff();
+                });
+            };
 
-        var bindMouseleave = function () {
-            triggerElement.on('mouseleave', function() {
-                triggerElement.sliderOff();
-            });
-        };
+            var bindActivated = function () {
+                $(this).on('activated', function() {
+                    $(this)
+                        .unbind('mouseleave').sliderOn()
+                        .siblings().trigger('deactivated');
+                });
+            };
 
-        var bindActivated = function () {
-            triggerElement.on('activated', function() {
-                triggerElement
-                    .unbind('mouseleave')
-                    .siblings().sliderOff().trigger('deactivated');
-            });
-        };
+            var bindDeactivated = function () {
+                $(this).on('deactivated', function() {
+                    $(this).sliderOff().removeClass('active')
+                    .bind('mouseleave', function() { $(this).sliderOff(); });
+                });
+            };
 
-        var bindDeactivated = function () {
-            triggerElement.on('deactivated', function() {
-                bindMouseleave();
-            });
-        };
-
-        bindFocus();
-        bindMouseenter();
-        bindMouseleave();
-        bindActivated();
-        bindDeactivated();
+            bindMouseenter();
+            bindMouseleave();
+            bindActivated();
+            bindDeactivated();
+        });
     };
 })( jQuery );
