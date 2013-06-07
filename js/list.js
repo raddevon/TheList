@@ -1,5 +1,12 @@
 var currentList;
 
+function setItemText(list, index, text) {
+    if (!list.item[index]) {
+        list.item[index] = {};
+    }
+    list.item[index].itemText = text;
+}
+
 function makeNewItem(count) {
     var item = $('<li class="new"><form action=""><input type="text" /></form></li>');
 
@@ -27,12 +34,13 @@ function removeItem(index) {
         $(this).bind('click', function() {
             makeNewItem();
             currentList.item.unshift('');
+            $('.list ul').find('li').eq(0).find('input').focus();
         });
     };
 })( jQuery );
 
 // Bind input change with a 5s delay
-$(document).on('input propertychange', 'input', function () {
+$('.list ul, .detail-column form').on('input propertychange', 'input, textarea', function () {
     var currentItem = $(this);
     // If it's the propertychange event, make sure it's the value that changed.
     if (window.event && event.type == 'propertychange' && event.propertyName != 'value')
@@ -41,35 +49,37 @@ $(document).on('input propertychange', 'input', function () {
     // Clear any previously set timer before setting a fresh one
     window.clearTimeout($(this).data('timeout'));
     $(this).data('timeout', setTimeout(function () {
-        var currentIndex = currentItem.parent().parent().index();
-        currentList.item[currentIndex] = currentItem.val();
-        currentList.save();
-    }, 5000));
-});
-
-// Bind input change with a 5s delay
-$(document).on('input propertychange', 'textarea', function () {
-    var detailsElement = $(this),
-        details = $(this).val();
-    // If it's the propertychange event, make sure it's the value that changed.
-    if (window.event && event.type == 'propertychange' && event.propertyName != 'value')
-        return;
-
-    // Clear any previously set timer before setting a fresh one
-    window.clearTimeout($(this).data('timeout'));
-    $(this).data('timeout', setTimeout(function () {
-        var currentIndex = detailsElement.data('index');
+        var currentIndex = $(this).data('index') || $(this).parent().parent().index(),
+            currentValue = $('.list li ').eq(currentIndex).find('input').val(),
+            details = $('#details').val() || null;
+        setItemText(currentList, currentIndex, currentValue);
         currentList.item[currentIndex].details = details;
         currentList.save();
     }, 5000));
 });
 
-// On focus, populate the details for the current item and hide the intro
-$(document).on('focus', 'input', function (e) {
-    var currentIndex = $(this).parent().parent().index(),
-        currentItem = $(this);
+// On blur, save the list item and its details. Hide the details textarea and show the intro
+$('.list ul, .detail-column form').on('blur', 'input, textarea', function () {
+    var currentIndex = $(this).data('index') || $(this).parent().parent().index(),
+        currentValue = $('.list li ').eq(currentIndex).find('input').val(),
+        details = $('#details').val() || null;
 
-    currentList.item[currentIndex] = currentItem.val();
+    if (!currentValue && currentList.item.length > 1) {
+        removeItem(currentIndex);
+    } else {
+        setItemText(currentList, currentIndex, currentValue);
+        currentList.item[currentIndex].details = details;
+    }
+    currentList.save();
+});
+
+// Save the list before the user leaves the page
+$(window).on('beforeunload', function() {
+    currentList.save();
+});
+
+$('.list ul').on('activated', 'li', function() {
+    var currentIndex = $(this).index();
 
     var details = currentList.item[currentIndex].details || '';
 
@@ -77,26 +87,8 @@ $(document).on('focus', 'input', function (e) {
     $('#details').show().val(details).data('index', currentIndex);
 });
 
-// On blur, save the list item and its details. Hide the details textarea and show the intro
-$(document).on('blur', 'input', function (e) {
-    var currentValue = $(this).val(),
-        currentIndex = $(this).parent().parent().index(),
-        details = $('#details').val() || null;
-
-    if (!currentValue && currentList.item.length > 1) {
-        removeItem(currentIndex);
-    } else {
-        currentList.item[currentIndex] = currentValue;
-        currentList.item[currentIndex].details = details;
-    }
-
-    $('#intro').show();
-    $('#details').hide().val('');
-});
-
-// Save the list before the user leaves the page
-$(window).on('beforeunload', function() {
-    currentList.save();
+$('.list ul').on('focus', 'input', function() {
+    $(this).closest('li').trigger('activated');
 });
 
 $(document).ready(function() {
@@ -114,6 +106,6 @@ $(document).ready(function() {
     // For each item in the stored list, create a new item in the on-screen list and load the value into it
     makeNewItem(currentList.item.length);
     $.map(currentList.item, function(item, index) {
-        $('.list li ').eq(index).find('input').val(item);
+        $('.list li ').eq(index).find('input').val(item.itemText);
     });
 });
