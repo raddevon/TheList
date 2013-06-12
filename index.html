@@ -32,7 +32,8 @@
     <script src="js/colorSlide.js"></script>
     <script>
         $(document).ready(function() {
-            $.each($('.list').find('li'), function(i,v) { $(v).colorSlide(); });
+            // $.each($('.list').find('li'), function(i,v) { $(v).colorSlide(); });
+            $('.list').find('li').colorSlide();
             $('.add').newItem();
         });
     </script>

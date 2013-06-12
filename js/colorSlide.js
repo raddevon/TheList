@@ -1,6 +1,7 @@
+// TODO: This whole thing is broke as a joke. Fix it by rewriting.
 (function( $ ){
     $.fn.colorSlide = function() {
-        return this.each(function() {
+        return this.each( function() {
             // var $(this) = $(this);
             var elWidth = $(this).outerWidth();
             var elHeight = $(this).outerHeight();
