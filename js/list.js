@@ -64,6 +64,7 @@ $('.list ul, .detail-column form').on('blur', 'input, textarea', function () {
         currentValue = $('.list li ').eq(currentIndex).find('input').val(),
         details = $('#details').val() || null;
 
+
     if (!currentValue && currentList.item.length > 1) {
         removeItem(currentIndex);
     } else {
