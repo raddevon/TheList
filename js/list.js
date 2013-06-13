@@ -34,7 +34,8 @@ function removeItem(index) {
         $(this).bind('click', function() {
             makeNewItem();
             currentList.item.unshift('');
-            $('.list ul').find('li').eq(0).find('input').focus();
+
+            $('.list ul').find('li').eq(0).find('input').colorSlide().focus();
         });
     };
 })( jQuery );
