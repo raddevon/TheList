@@ -1,4 +1,5 @@
 $gray       : #BCBDAC
+$dark-gray  : darken($gray, 0.3)
 $pink       : #F02475
 $orange     : #F27435
 $yellow     : #CFBE27
@@ -51,3 +52,8 @@ body
     // Default list item styling
     +transition(color 0.2s ease-out 0.1s)
     border-left: $line-width solid $yellow
+
+// Placeholder text colors
+.list
+    ::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder
+       color: $dark-gray
