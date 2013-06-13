@@ -2,12 +2,13 @@
 (function( $ ){
     $.fn.colorSlide = function() {
         return this.each( function() {
-            // var $(this) = $(this);
-            var elWidth = $(this).outerWidth();
-            var elHeight = $(this).outerHeight();
-            var elColor = $(this).css('border-left-color');
+            var $triggerElement = $(this);
+            var $listItem = $triggerElement.closest('li');
+            var elWidth = $listItem.outerWidth();
+            var elHeight = $listItem.outerHeight();
+            var elColor = $listItem.css('border-left-color');
 
-            $(this).find('a').css({
+            $listItem.find('a').css({
                 'position': 'relative',
                 'z-index': 51
             });
@@ -21,53 +22,50 @@
                 'top': 0,
                 'left': 0,
                 'z-index': 50
-            }).appendTo($(this));
+            }).appendTo($listItem);
 
-            $.fn.sliderOn = function() {
-                $(this).find('.color-slider').css('width', elWidth);
-                return this;
+            var sliderOn = function($element) {
+                $element.find('.color-slider').css('width', elWidth);
             };
 
-            $.fn.sliderOff = function() {
-                $(this).find('.color-slider').css('width', 0);
-                $(this).closest('li').trigger('deactivated');
-                return this;
+            var sliderOff = function($element) {
+                $element.find('.color-slider').css('width', 0);
             };
 
-            $.fn.sliderToggle = function() {
-                var currentSlider = $(this).find('.color-slider');
+            var sliderToggle = function($element) {
+                var currentSlider = $element.find('.color-slider');
                 if (currentSlider.css('width') > 0) {
-                    $(this).sliderOff();
+                    sliderOff($element);
                 } else {
-                    $(this).sliderOn();
+                    sliderOn($element);
                 }
-                return this;
             };
 
             var bindMouseenter = function () {
-                $(this).on('mouseenter', function() {
-                    $(this).sliderOn();
+                $triggerElement.on('mouseenter', function() {
+                    sliderOn($listItem);
                 });
             };
 
             var bindMouseleave = function () {
-                $(this).on('mouseleave', function() {
-                    $(this).sliderOff();
+                $triggerElement.on('mouseleave', function() {
+                    sliderOff($listItem);
                 });
             };
 
             var bindActivated = function () {
-                $(this).on('activated', function() {
-                    $(this)
-                        .unbind('mouseleave').sliderOn()
-                        .siblings().trigger('deactivated');
+                $listItem.on('activated', function() {
+                    $triggerElement.unbind('mouseleave');
+                    $listItem.siblings().trigger('deactivated');
+                    sliderOn($listItem);
                 });
             };
 
             var bindDeactivated = function () {
-                $(this).on('deactivated', function() {
-                    $(this).sliderOff().removeClass('active')
-                    .bind('mouseleave', function() { $(this).sliderOff(); });
+                $listItem.on('deactivated', function() {
+                    $listItem.removeClass('active');
+                    $triggerElement.bind('mouseleave', function() { sliderOff($listItem); });
+                    sliderOff($listItem);
                 });
             };
 
