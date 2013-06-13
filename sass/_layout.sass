@@ -28,6 +28,8 @@ html, body
 .list
     width: 96%
     margin: 0 auto
+    height: 100%
+    overflow-y: auto
     a
         display: block
     li
@@ -53,10 +55,6 @@ input[type="text"], #details
 
 #intro
     display: none
-
-// todo Commented until I can fix the new item animation
-// .new-item
-//     opacity: 0
 
 +breakpoint($tablet)
     .list, .detail-column

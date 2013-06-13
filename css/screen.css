@@ -59,11 +59,11 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
 
-/* line 16, ../sass/_colors.sass */
+/* line 17, ../sass/_colors.sass */
 body {
   background: #3b2d38; }
 
-/* line 18, ../sass/_colors.sass */
+/* line 19, ../sass/_colors.sass */
 .list {
   background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(26, 26, 26, 0.5)), color-stop(2%, rgba(26, 26, 26, 0)), color-stop(98%, rgba(26, 26, 26, 0)), color-stop(100%, rgba(26, 26, 26, 0.5))), #bcbdac;
   background: -webkit-linear-gradient(left, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0) 2%, rgba(26, 26, 26, 0) 98%, rgba(26, 26, 26, 0.5)), #bcbdac;
@@ -72,12 +72,12 @@ body {
   background: linear-gradient(left, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0) 2%, rgba(26, 26, 26, 0) 98%, rgba(26, 26, 26, 0.5)), #bcbdac;
   color: #1a1a1a; }
 
-/* line 21, ../sass/_colors.sass */
+/* line 22, ../sass/_colors.sass */
 .detail-column {
   background: #3b2d38;
   color: #e6e6e6; }
 
-/* line 24, ../sass/_colors.sass */
+/* line 25, ../sass/_colors.sass */
 .add {
   color: #1a1a1a;
   -webkit-transition: color 0.2s ease-out;
@@ -85,11 +85,11 @@ body {
   -moz-transition: color 0.2s ease-out 0.1s;
   -o-transition: color 0.2s ease-out 0.1s;
   transition: color 0.2s ease-out 0.1s; }
-  /* line 27, ../sass/_colors.sass */
+  /* line 28, ../sass/_colors.sass */
   .add:hover {
     color: #f02475; }
 
-/* line 29, ../sass/_colors.sass */
+/* line 30, ../sass/_colors.sass */
 .color-slider {
   -webkit-transition: width 0.5s ease-out;
   -webkit-transition-delay: 0.1s;
@@ -97,37 +97,37 @@ body {
   -o-transition: width 0.5s ease-out 0.1s;
   transition: width 0.5s ease-out 0.1s; }
 
-/* line 32, ../sass/_colors.sass */
+/* line 33, ../sass/_colors.sass */
 .list a {
   -webkit-transition: color 0.2s ease-out;
   -webkit-transition-delay: 0.1s;
   -moz-transition: color 0.2s ease-out 0.1s;
   -o-transition: color 0.2s ease-out 0.1s;
   transition: color 0.2s ease-out 0.1s; }
-/* line 34, ../sass/_colors.sass */
+/* line 35, ../sass/_colors.sass */
 .list a:link, .list a:visited {
   color: #1a1a1a; }
-/* line 36, ../sass/_colors.sass */
+/* line 37, ../sass/_colors.sass */
 .list a:hover, .list .active a {
   color: #e6e6e6; }
 
-/* line 39, ../sass/_colors.sass */
+/* line 40, ../sass/_colors.sass */
 #details {
   color: inherit; }
 
-/* line 42, ../sass/_colors.sass */
+/* line 43, ../sass/_colors.sass */
 .list li input[type="text"]:focus, #details:focus {
   background: rgba(255, 255, 255, 0.2); }
 
-/* line 46, ../sass/_colors.sass */
+/* line 47, ../sass/_colors.sass */
 .list li.today {
   border-left: 0.65em solid #f02475; }
 
-/* line 48, ../sass/_colors.sass */
+/* line 49, ../sass/_colors.sass */
 .list li.soon {
   border-left: 0.65em solid #f27435; }
 
-/* line 50, ../sass/_colors.sass */
+/* line 51, ../sass/_colors.sass */
 .list li {
   -webkit-transition: color 0.2s ease-out;
   -webkit-transition-delay: 0.1s;
@@ -135,6 +135,10 @@ body {
   -o-transition: color 0.2s ease-out 0.1s;
   transition: color 0.2s ease-out 0.1s;
   border-left: 0.65em solid #cfbe27; }
+
+/* line 58, ../sass/_colors.sass */
+.list ::-webkit-input-placeholder, .list :-moz-placeholder, .list ::-moz-placeholder, .list :-ms-input-placeholder {
+  color: #bbbcab; }
 
 /* line 8, ../sass/_layout.sass */
 * {
@@ -168,11 +172,13 @@ html, body {
 /* line 28, ../sass/_layout.sass */
 .list {
   width: 96%;
-  margin: 0 auto; }
-  /* line 31, ../sass/_layout.sass */
+  margin: 0 auto;
+  height: 100%;
+  overflow-y: auto; }
+  /* line 33, ../sass/_layout.sass */
   .list a {
     display: block; }
-  /* line 33, ../sass/_layout.sass */
+  /* line 35, ../sass/_layout.sass */
   .list li {
     position: relative;
     padding: 0.5em;
@@ -180,12 +186,12 @@ html, body {
     -moz-transition: opacity 0.2s ease-out, top 0.2s ease-out;
     -o-transition: opacity 0.2s ease-out, top 0.2s ease-out;
     transition: opacity 0.2s ease-out, top 0.2s ease-out; }
-    /* line 37, ../sass/_layout.sass */
+    /* line 39, ../sass/_layout.sass */
     .list li form {
       position: relative;
       z-index: 51; }
 
-/* line 41, ../sass/_layout.sass */
+/* line 43, ../sass/_layout.sass */
 input[type="text"], #details {
   background: none;
   resize: none;
@@ -195,55 +201,55 @@ input[type="text"], #details {
   padding: 0;
   width: 100%; }
 
-/* line 50, ../sass/_layout.sass */
+/* line 52, ../sass/_layout.sass */
 #details {
   height: 11em;
   display: none; }
 
-/* line 54, ../sass/_layout.sass */
+/* line 56, ../sass/_layout.sass */
 #intro {
   display: none; }
 
 @media (min-width: 768px) {
-  /* line 62, ../sass/_layout.sass */
+  /* line 64, ../sass/_layout.sass */
   .list, .detail-column {
     float: left; }
 
-  /* line 64, ../sass/_layout.sass */
+  /* line 66, ../sass/_layout.sass */
   .detail-column {
     width: 49%;
     display: block; }
 
-  /* line 67, ../sass/_layout.sass */
+  /* line 69, ../sass/_layout.sass */
   .list {
     width: 50%;
     padding-left: 1.5em;
     padding-right: 0.5em; }
-    /* line 71, ../sass/_layout.sass */
+    /* line 73, ../sass/_layout.sass */
     .list li {
       margin-right: 1em; }
 
-  /* line 73, ../sass/_layout.sass */
+  /* line 75, ../sass/_layout.sass */
   #intro {
     display: block; } }
 @media (min-width: 1025px) {
-  /* line 77, ../sass/_layout.sass */
+  /* line 79, ../sass/_layout.sass */
   .detail-column {
     width: 59%;
     padding-left: 3em;
     padding-right: 3em; }
 
-  /* line 81, ../sass/_layout.sass */
+  /* line 83, ../sass/_layout.sass */
   .list {
     width: 40%; } }
 @media (min-width: 1300px) {
-  /* line 85, ../sass/_layout.sass */
+  /* line 87, ../sass/_layout.sass */
   .detail-column {
     width: 66%;
     padding-left: 6em;
     padding-right: 6em; }
 
-  /* line 89, ../sass/_layout.sass */
+  /* line 91, ../sass/_layout.sass */
   .list {
     width: 33%; } }
 /* line 61, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
