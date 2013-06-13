@@ -34,7 +34,6 @@ function removeItem(index) {
         $(this).bind('click', function() {
             makeNewItem();
             currentList.item.unshift('');
-
             $('.list ul').find('li').eq(0).find('input').colorSlide().focus();
         });
     };
@@ -91,6 +90,12 @@ $('.list ul').on('activated', 'li', function() {
 $('.list ul').on('focus', 'input', function() {
     $(this).closest('li').trigger('activated');
 });
+
+$('body').on('submit', 'form', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(e.target).find('input, textarea').blur();
+})
 
 $(document).ready(function() {
     // Instantiate a new list
