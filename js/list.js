@@ -110,6 +110,12 @@ $('body').on('submit', 'form', function(e) {
     $(e.target).find('input, textarea').blur();
 });
 
+// Suppress add/delete buttons' default actions
+$('.delete, .add').on('click', 'a', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+});
+
 $(document).ready(function() {
     // Instantiate a new list
     currentList = new MyList();
