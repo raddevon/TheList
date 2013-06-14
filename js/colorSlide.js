@@ -1,18 +1,15 @@
-// TODO: This whole thing is broke as a joke. Fix it by rewriting.
 (function( $ ){
     $.fn.colorSlide = function() {
         return this.each( function() {
             var $triggerElement = $(this);
             var $listItem = $triggerElement.closest('li');
+
+            // Capture list item dimensions and border color for slider
             var elWidth = $listItem.outerWidth();
             var elHeight = $listItem.outerHeight();
             var elColor = $listItem.css('border-left-color');
 
-            $listItem.find('a').css({
-                'position': 'relative',
-                'z-index': 51
-            });
-
+            // Create and inject color slider
             var colorSlider = $('<div class="color-slider"></div>');
             colorSlider.css({
                 'background': elColor,
@@ -24,6 +21,7 @@
                 'z-index': 50
             }).appendTo($listItem);
 
+            /* Slider functions */
             var sliderOn = function($element) {
                 $element.find('.color-slider').css('width', elWidth);
             };
@@ -41,38 +39,26 @@
                 }
             };
 
-            var bindMouseenter = function () {
-                $triggerElement.on('mouseenter', function() {
-                    sliderOn($listItem);
-                });
-            };
+            /* Event bindings */
+            $triggerElement.on('mouseenter', function() {
+                sliderOn($listItem);
+            });
 
-            var bindMouseleave = function () {
-                $triggerElement.on('mouseleave', function() {
-                    sliderOff($listItem);
-                });
-            };
+            $triggerElement.on('mouseleave', function() {
+                sliderOff($listItem);
+            });
 
-            var bindActivated = function () {
-                $listItem.on('activated', function() {
-                    $triggerElement.unbind('mouseleave');
-                    $listItem.siblings().trigger('deactivated');
-                    sliderOn($listItem);
-                });
-            };
+            $listItem.on('activated', function() {
+                $triggerElement.unbind('mouseleave');
+                $listItem.siblings().trigger('deactivated');
+                sliderOn($listItem);
+            });
 
-            var bindDeactivated = function () {
-                $listItem.on('deactivated', function() {
-                    $listItem.removeClass('active');
-                    $triggerElement.bind('mouseleave', function() { sliderOff($listItem); });
-                    sliderOff($listItem);
-                });
-            };
-
-            bindMouseenter();
-            bindMouseleave();
-            bindActivated();
-            bindDeactivated();
+            $listItem.on('deactivated', function() {
+                $listItem.removeClass('active');
+                $triggerElement.bind('mouseleave', function() { sliderOff($listItem); });
+                sliderOff($listItem);
+            });
         });
     };
 })( jQuery );
