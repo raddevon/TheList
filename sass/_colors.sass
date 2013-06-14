@@ -1,5 +1,5 @@
 $gray       : #BCBDAC
-$dark-gray  : darken($gray, 0.3)
+$dark-gray  : darken($gray, 30%)
 $pink       : #F02475
 $orange     : #F27435
 $yellow     : #CFBE27
@@ -27,13 +27,21 @@ body
     +transition(color 0.2s ease-out 0.1s)
     &:hover
         color: $pink
+.delete
+    a:link, a:visited
+        i
+            color: $dark-gray
+            +transition(color 0.2s ease-out 0.1s)
+    a:hover
+        i
+            color: $near-white
 .color-slider
     +transition(width 0.5s ease-out 0.1s)
 .list
     a
         +transition(color 0.2s ease-out 0.1s)
-    a:link, a:visited
-        color: $near-black
+    // a:link, a:visited
+    //     color: $near-black
     a:hover, .active a
         color: $near-white
 

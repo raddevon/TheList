@@ -90,7 +90,19 @@ body {
   .add:hover {
     color: #f02475; }
 
-/* line 30, ../sass/_colors.sass */
+/* line 32, ../sass/_colors.sass */
+.delete a:link i, .delete a:visited i {
+  color: #72745c;
+  -webkit-transition: color 0.2s ease-out;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition: color 0.2s ease-out 0.1s;
+  -o-transition: color 0.2s ease-out 0.1s;
+  transition: color 0.2s ease-out 0.1s; }
+/* line 36, ../sass/_colors.sass */
+.delete a:hover i {
+  color: #e6e6e6; }
+
+/* line 38, ../sass/_colors.sass */
 .color-slider {
   -webkit-transition: width 0.5s ease-out;
   -webkit-transition-delay: 0.1s;
@@ -98,37 +110,34 @@ body {
   -o-transition: width 0.5s ease-out 0.1s;
   transition: width 0.5s ease-out 0.1s; }
 
-/* line 33, ../sass/_colors.sass */
+/* line 41, ../sass/_colors.sass */
 .list a {
   -webkit-transition: color 0.2s ease-out;
   -webkit-transition-delay: 0.1s;
   -moz-transition: color 0.2s ease-out 0.1s;
   -o-transition: color 0.2s ease-out 0.1s;
   transition: color 0.2s ease-out 0.1s; }
-/* line 35, ../sass/_colors.sass */
-.list a:link, .list a:visited {
-  color: #1a1a1a; }
-/* line 37, ../sass/_colors.sass */
+/* line 45, ../sass/_colors.sass */
 .list a:hover, .list .active a {
   color: #e6e6e6; }
 
-/* line 40, ../sass/_colors.sass */
+/* line 48, ../sass/_colors.sass */
 #details {
   color: inherit; }
 
-/* line 43, ../sass/_colors.sass */
+/* line 51, ../sass/_colors.sass */
 .list li input[type="text"]:focus, #details:focus {
   background: rgba(255, 255, 255, 0.2); }
 
-/* line 47, ../sass/_colors.sass */
+/* line 55, ../sass/_colors.sass */
 .list li.today {
   border-left: 0.65em solid #f02475; }
 
-/* line 49, ../sass/_colors.sass */
+/* line 57, ../sass/_colors.sass */
 .list li.soon {
   border-left: 0.65em solid #f27435; }
 
-/* line 51, ../sass/_colors.sass */
+/* line 59, ../sass/_colors.sass */
 .list li {
   -webkit-transition: color 0.2s ease-out;
   -webkit-transition-delay: 0.1s;
@@ -137,9 +146,9 @@ body {
   transition: color 0.2s ease-out 0.1s;
   border-left: 0.65em solid #cfbe27; }
 
-/* line 58, ../sass/_colors.sass */
+/* line 66, ../sass/_colors.sass */
 .list ::-webkit-input-placeholder, .list :-moz-placeholder, .list ::-moz-placeholder, .list :-ms-input-placeholder {
-  color: #bbbcab; }
+  color: #72745c; }
 
 /* line 8, ../sass/_layout.sass */
 * {
@@ -325,6 +334,10 @@ h1 {
   padding-top: 0em;
   padding-bottom: 0em;
   margin-bottom: 0.5em; }
+
+/* line 38, ../sass/_typography.sass */
+.delete {
+  font-size: 0.7em; }
 
 @font-face {
   font-family: 'fontello';
