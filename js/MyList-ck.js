@@ -1,1 +1,0 @@
-function MyList(){this.item=[];this.load=function(){var e;if(supports_html5_storage())e=localStorage.getItem("theList");else{$.cookie.json=!0;e=$.cookie("the_list")}if(e){this.item.length=0;this.item=JSON.parse(e)}};this.save=function(e){var t=JSON.stringify(this.item);supports_html5_storage()?localStorage.setItem("theList",t):$.cookie("the_list",t)}};
