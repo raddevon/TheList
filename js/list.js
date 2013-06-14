@@ -26,13 +26,13 @@ function makeNewItem(count) {
 
     count = count || 1;
 
-    for (var i = 0; i < count; i++) {
-        if ($('.list li').length === 0 && $('.list li').first().val()) {
-            item.clone().prependTo($('.list ul')).removeClass('new');
-        } else {
-            $('.list li').css('top', $('.list li').outerHeight());
-            item.clone().prependTo($('.list ul')).removeClass('new');
-            $('.list li').css('top', 0);
+    if (count > 1 || $('.list li').length === 0 || $('.list li').find('input').eq(0).val()) {
+        for (var i = 0; i < count; i++) {
+            item.clone().prependTo($('.list ul'));
+            $('.list').find('li').eq(0).find('.delete a').deleteItem();
+            currentList.item.unshift('');
+            $('.list ul').find('li').eq(0).find('input').colorSlide().focus();
+
         }
     }
 }
@@ -47,8 +47,23 @@ function removeItem(index) {
     $.fn.newItem = function() {
         $(this).bind('click', function() {
             makeNewItem();
-            currentList.item.unshift('');
-            $('.list ul').find('li').eq(0).find('input').colorSlide().focus();
+        });
+    };
+})( jQuery );
+
+// newItem plugin allows an element to create new items in the list
+(function( $ ){
+    $.fn.deleteItem = function() {
+        var $deleteButton = $(this),
+            $currentItem = $deleteButton.closest('li').find('input');
+        $deleteButton.bind('click', function() {
+            $('#details').val('');
+            saveItem($currentItem);
+            if ($('.list li').length === 1) {
+                $currentItem.val('').focus();
+            } else {
+                $currentItem.focus().val('').blur();
+            }
         });
     };
 })( jQuery );
@@ -94,6 +109,7 @@ $('.list ul').on('activated', 'li', function() {
     var details = currentList.item[currentIndex].details || '';
 
     $('#intro').hide();
+    $('#item-text').show();
     $('#details').show().val(details).data('index', currentIndex);
 });
 
@@ -104,6 +120,7 @@ $('.list ul').on('deactivated', 'li', function() {
     var details = currentList.item[currentIndex].details || '';
 
     $('#intro').show();
+    $('#item-text').show();
     $('#details').hide();
 });
 
