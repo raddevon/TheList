@@ -7,6 +7,20 @@ function setItemText(list, index, text) {
     list.item[index].itemText = text;
 }
 
+function saveItem($field) {
+    var currentIndex = $field.data('index') || $field.parent().parent().index(),
+        currentValue = $('.list li ').eq(currentIndex).find('input').val(),
+        details = $('#details').val() || null;
+    setItemText(currentList, currentIndex, currentValue);
+    currentList.item[currentIndex].details = details;
+    currentList.save();
+    displayItemText(currentValue);
+}
+
+function displayItemText(newValue) {
+    $('#item-text').text(newValue);
+}
+
 function makeNewItem(count) {
     var item = $('<li class="new"><form action=""><input type="text" /></form><div class="delete"><a href="#"><i class="icon-delete"></i></a></div></li>');
 
@@ -41,7 +55,7 @@ function removeItem(index) {
 
 // Bind input change with a 5s delay
 $('.list ul, .detail-column form').on('input propertychange', 'input, textarea', function () {
-    var currentItem = $(this);
+    var $currentItem = $(this);
     // If it's the propertychange event, make sure it's the value that changed.
     if (window.event && event.type == 'propertychange' && event.propertyName != 'value')
         return;
@@ -49,13 +63,8 @@ $('.list ul, .detail-column form').on('input propertychange', 'input, textarea',
     // Clear any previously set timer before setting a fresh one
     window.clearTimeout($(this).data('timeout'));
     $(this).data('timeout', setTimeout(function () {
-        var currentIndex = $(this).data('index') || $(this).parent().parent().index(),
-            currentValue = $('.list li ').eq(currentIndex).find('input').val(),
-            details = $('#details').val() || null;
-        setItemText(currentList, currentIndex, currentValue);
-        currentList.item[currentIndex].details = details;
-        currentList.save();
-    }, 5000));
+        saveItem($currentItem);
+    }, 1000));
 });
 
 // On blur, save the list item and its details. Hide the details textarea and show the intro
@@ -101,7 +110,7 @@ $('.list ul').on('deactivated', 'li', function() {
 // Activate an item when its input field has focus
 $('.list ul').on('focus', 'input', function() {
     $(this).closest('li').trigger('activated');
-    $('#item-text').text($(this).val());
+    displayItemText($(this).val());
 });
 
 // Suppress form submit
