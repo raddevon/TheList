@@ -101,6 +101,7 @@ $('.list ul').on('deactivated', 'li', function() {
 // Activate an item when its input field has focus
 $('.list ul').on('focus', 'input', function() {
     $(this).closest('li').trigger('activated');
+    $('#item-text').text($(this).val());
 });
 
 // Suppress form submit
