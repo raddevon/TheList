@@ -25,7 +25,7 @@ function makeNewItem(count) {
 
 function removeItem(index) {
     currentList.item.splice(index, 1);
-    $('.list li').eq(index).remove();
+    $('.list li').eq(index).trigger('deactivated').remove();
 }
 
 // newItem plugin allows an element to create new items in the list
@@ -78,6 +78,7 @@ $(window).on('beforeunload', function() {
     currentList.save();
 });
 
+// Show details for activated item
 $('.list ul').on('activated', 'li', function() {
     var currentIndex = $(this).index();
 
@@ -87,15 +88,27 @@ $('.list ul').on('activated', 'li', function() {
     $('#details').show().val(details).data('index', currentIndex);
 });
 
+// Hide details when an item is deactivated
+$('.list ul').on('deactivated', 'li', function() {
+    var currentIndex = $(this).index();
+
+    var details = currentList.item[currentIndex].details || '';
+
+    $('#intro').show();
+    $('#details').hide();
+});
+
+// Activate an item when its input field has focus
 $('.list ul').on('focus', 'input', function() {
     $(this).closest('li').trigger('activated');
 });
 
+// Suppress form submit
 $('body').on('submit', 'form', function(e) {
     e.preventDefault();
     e.stopPropagation();
     $(e.target).find('input, textarea').blur();
-})
+});
 
 $(document).ready(function() {
     // Instantiate a new list
