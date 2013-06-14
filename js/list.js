@@ -8,7 +8,7 @@ function setItemText(list, index, text) {
 }
 
 function makeNewItem(count) {
-    var item = $('<li class="new"><form action=""><input type="text" /></form></li>');
+    var item = $('<li class="new"><form action=""><input type="text" /></form><div class="delete"><i class="icon-delete"></i></div></li>');
 
     count = count || 1;
 
