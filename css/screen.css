@@ -334,20 +334,21 @@ h2 {
   font-family: "Noto Sans", sans-serif;
   font-weight: 400;
   font-size: 1.6em;
-  line-height: 2em; }
+  line-height: 2em;
+  line-height: 1.3em; }
 
-/* line 37, ../sass/_typography.sass */
+/* line 38, ../sass/_typography.sass */
 .list a:link, .list a:active, .list a:visited {
   text-decoration: none; }
 
-/* line 40, ../sass/_typography.sass */
+/* line 41, ../sass/_typography.sass */
 #list-head {
   margin-top: 0em;
   padding-top: 0em;
   padding-bottom: 0em;
   margin-bottom: 0.5em; }
 
-/* line 43, ../sass/_typography.sass */
+/* line 44, ../sass/_typography.sass */
 .delete {
   font-size: 0.7em; }
 
