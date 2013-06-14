@@ -35,10 +35,16 @@ html, body
     li
         position: relative
         padding: 0.5em
+        +clearfix
         +transition(opacity 0.2s ease-out, top 0.2s ease-out)
         form
             position: relative
             z-index: 51
+
+.list form
+    width: 90%
+    display: inline-block
+    float: left
 
 input[type="text"], #details
     background: none
@@ -55,6 +61,19 @@ input[type="text"], #details
 
 #intro
     display: none
+
+.add
+    float: right
+    +adjust-font-size-to(32px)
+    position: absolute
+    top: 20%
+    right: 0
+
+.delete
+    float: right
+    position: relative
+    z-index: 55
+    display: inline-block
 
 +breakpoint($tablet)
     .list, .detail-column
