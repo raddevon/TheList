@@ -119,8 +119,6 @@ $('.list ul').on('activated', 'li', function() {
 $('.list ul').on('deactivated', 'li', function() {
     var currentIndex = $(this).index();
 
-    var details = currentList.item[currentIndex].details || '';
-
     $('#intro').show();
     $('#item-text').text('');
     $('#details').hide();
