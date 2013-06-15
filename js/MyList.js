@@ -15,14 +15,24 @@ function MyList() {
             this.item.length = 0;
             this.item = JSON.parse(listString);
         }
+        this.cleanup();
     };
 
     this.save = function(index) {
+        this.cleanup();
         var listString = JSON.stringify(this.item);
         if (supports_html5_storage()) {
             localStorage.setItem('theList', listString);
         } else {
             $.cookie('the_list', listString);
         }
+    };
+
+    this.cleanup = function() {
+        this.item = $.map(this.item, function(value, index) {
+            if (value.itemText || value.details) {
+                return value;
+            }
+        });
     };
 }
