@@ -31,9 +31,11 @@ function makeNewItem(count) {
             item.clone().prependTo($('.list ul'));
             $('.list').find('li').eq(0).find('.delete a').deleteItem();
             currentList.item.unshift('');
-            $('.list ul').find('li').eq(0).find('input').colorSlide().focus();
-
         }
+    }
+
+    if (count === 1) {
+        $('.list ul').find('li').eq(0).find('input').colorSlide().focus();
     }
 }
 
@@ -58,6 +60,7 @@ function removeItem(index) {
             $currentItem = $deleteButton.closest('li').find('input');
         $deleteButton.bind('click', function() {
             $('#details').val('');
+            $('#item-text').text('');
             saveItem($currentItem);
             if ($('.list li').length === 1) {
                 $currentItem.val('').focus();
@@ -109,7 +112,6 @@ $('.list ul').on('activated', 'li', function() {
     var details = currentList.item[currentIndex].details || '';
 
     $('#intro').hide();
-    $('#item-text').show();
     $('#details').show().val(details).data('index', currentIndex);
 });
 
@@ -120,7 +122,7 @@ $('.list ul').on('deactivated', 'li', function() {
     var details = currentList.item[currentIndex].details || '';
 
     $('#intro').show();
-    $('#item-text').show();
+    $('#item-text').text('');
     $('#details').hide();
 });
 
@@ -157,6 +159,7 @@ $(document).ready(function() {
 
     // For each item in the stored list, create a new item in the on-screen list and load the value into it
     makeNewItem(currentList.item.length);
+    currentList.cleanup();
     $.map(currentList.item, function(item, index) {
         $('.list li ').eq(index).find('input').val(item.itemText);
     });
