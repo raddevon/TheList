@@ -23,25 +23,18 @@ body
     background: $dark
     color: $detail-text
 .add
-    color: $near-black
-    +transition(color 0.2s ease-out 0.1s)
-    &:hover
-        color: $pink
+    color: $pink
+
 .delete
     a:link, a:visited
         i
             color: $dark-gray
-            +transition(color 0.2s ease-out 0.1s)
-    a:hover
-        i
-            color: $near-white
+
 .color-slider
     +transition(width 0.5s ease-out 0.1s)
 .list
     a
         +transition(color 0.2s ease-out 0.1s)
-    // a:link, a:visited
-    //     color: $near-black
     a:hover, .active a
         color: $near-white
 
@@ -72,3 +65,19 @@ body
         color: inherit
         &:focus
             background: $lighten
+
++breakpoint($desktop)
+    .add
+        color: $near-black
+        +transition(color 0.2s ease-out 0.1s)
+        &:hover
+            color: $pink
+
+    .delete
+        a:link, a:visited
+            i
+                color: $dark-gray
+                +transition(color 0.2s ease-out 0.1s)
+        a:hover
+            i
+                color: $near-white
