@@ -21,6 +21,27 @@ function displayItemText(newValue) {
     $('#item-text').text(newValue);
 }
 
+function showDetails(details, currentIndex) {
+    $('#intro').hide();
+    $('#details').show().val(details).data('index', currentIndex);
+
+    // Move the details div underneath the current item if the details column is not visible
+    if ($('.detail-column').is(':hidden')) {
+        $('#details').appendTo($('.list').find('li').eq(currentIndex));
+    }
+}
+
+function hideDetails() {
+    $('#intro').show();
+    $('#item-text').text('');
+    $('#details').hide();
+
+    // Move the details div back to its original location
+    if ($('.detail-column').is(':hidden')) {
+        $('#details').appendTo($('.detail-column'));
+    }
+}
+
 function makeNewItem(count) {
     var item = $('<li class="new"><form action=""><input type="text" /></form><div class="delete"><a href="#"><i class="icon-delete"></i></a></div></li>');
 
@@ -111,17 +132,14 @@ $('.list ul').on('activated', 'li', function() {
 
     var details = currentList.item[currentIndex].details || '';
 
-    $('#intro').hide();
-    $('#details').show().val(details).data('index', currentIndex);
+    showDetails(details, currentIndex);
 });
 
 // Hide details when an item is deactivated
 $('.list ul').on('deactivated', 'li', function() {
     var currentIndex = $(this).index();
 
-    $('#intro').show();
-    $('#item-text').text('');
-    $('#details').hide();
+    hideDetails();
 });
 
 // Activate an item when its input field has focus
