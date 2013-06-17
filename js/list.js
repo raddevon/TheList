@@ -1,5 +1,14 @@
 var currentList;
 
+function getIndex($field) {
+    // Gets the index of either an input field or its corresponding details box
+    if ($field.data('index') === undefined) {
+        return $field.parent().parent().index();
+    } else {
+        return $field.data('index');
+    }
+}
+
 function setItemText(list, index, text) {
     if (!list.item[index]) {
         list.item[index] = {};
@@ -8,7 +17,8 @@ function setItemText(list, index, text) {
 }
 
 function saveItem($field) {
-    var currentIndex = $field.data('index') || $field.parent().parent().index(),
+
+    var currentIndex = getIndex($field),
         currentValue = $('.list li ').eq(currentIndex).find('input').val(),
         details = $('#details').val() || null;
     setItemText(currentList, currentIndex, currentValue);
@@ -108,7 +118,7 @@ $('.list ul, .detail-column form').on('input propertychange', 'input, textarea',
 
 // On blur, save the list item and its details. Hide the details textarea and show the intro
 $('.list ul, .detail-column form').on('blur', 'input, textarea', function () {
-    var currentIndex = $(this).data('index') || $(this).parent().parent().index(),
+    var currentIndex = getIndex($(this)),
         currentValue = $('.list li ').eq(currentIndex).find('input').val(),
         details = $('#details').val() || null;
 
