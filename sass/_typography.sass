@@ -17,7 +17,7 @@ p
     +rhythm(0, 0, 0, 1, 20px)
 
 li
-    +adjust-font-size-to(24px)
+    +adjust-font-size-to(18px)
 
 .list li form input[type="text"], #details
     font-family: inherit
@@ -26,7 +26,7 @@ li
 h1
     font-family: $heading-font
     font-weight: $heading-weight
-    +adjust-font-size-to(64px)
+    +adjust-font-size-to(48px)
 
 h2
     font-family: $body-font
@@ -43,3 +43,16 @@ h2
 
 .delete
     font-size: 0.7em
+
++breakpoint($tablet)
+    h1
+        font-family: $heading-font
+        font-weight: $heading-weight
+        +adjust-font-size-to(64px)
+
+    li
+        +adjust-font-size-to(24px)
+
+    .list li form input[type="text"], #details
+        font-family: inherit
+        font-size: inherit

@@ -60,11 +60,11 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
 
-/* line 19, ../sass/_colors.sass */
+/* line 17, ../sass/_colors.sass */
 body {
   background: #3b2d38; }
 
-/* line 21, ../sass/_colors.sass */
+/* line 19, ../sass/_colors.sass */
 .list {
   background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(26, 26, 26, 0.5)), color-stop(2%, rgba(26, 26, 26, 0)), color-stop(98%, rgba(26, 26, 26, 0)), color-stop(100%, rgba(26, 26, 26, 0.5))), #bcbdac;
   background: -webkit-linear-gradient(left, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0) 2%, rgba(26, 26, 26, 0) 98%, rgba(26, 26, 26, 0.5)), #bcbdac;
@@ -73,12 +73,12 @@ body {
   background: linear-gradient(left, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0) 2%, rgba(26, 26, 26, 0) 98%, rgba(26, 26, 26, 0.5)), #bcbdac;
   color: #1a1a1a; }
 
-/* line 24, ../sass/_colors.sass */
+/* line 22, ../sass/_colors.sass */
 .detail-column {
   background: #3b2d38;
   color: #e6e6e6; }
 
-/* line 27, ../sass/_colors.sass */
+/* line 25, ../sass/_colors.sass */
 .add {
   color: #1a1a1a;
   -webkit-transition: color 0.2s ease-out;
@@ -86,11 +86,11 @@ body {
   -moz-transition: color 0.2s ease-out 0.1s;
   -o-transition: color 0.2s ease-out 0.1s;
   transition: color 0.2s ease-out 0.1s; }
-  /* line 30, ../sass/_colors.sass */
+  /* line 28, ../sass/_colors.sass */
   .add:hover {
     color: #f02475; }
 
-/* line 34, ../sass/_colors.sass */
+/* line 32, ../sass/_colors.sass */
 .delete a:link i, .delete a:visited i {
   color: #72745c;
   -webkit-transition: color 0.2s ease-out;
@@ -98,11 +98,11 @@ body {
   -moz-transition: color 0.2s ease-out 0.1s;
   -o-transition: color 0.2s ease-out 0.1s;
   transition: color 0.2s ease-out 0.1s; }
-/* line 38, ../sass/_colors.sass */
+/* line 36, ../sass/_colors.sass */
 .delete a:hover i {
   color: #e6e6e6; }
 
-/* line 40, ../sass/_colors.sass */
+/* line 38, ../sass/_colors.sass */
 .color-slider {
   -webkit-transition: width 0.5s ease-out;
   -webkit-transition-delay: 0.1s;
@@ -110,35 +110,35 @@ body {
   -o-transition: width 0.5s ease-out 0.1s;
   transition: width 0.5s ease-out 0.1s; }
 
-/* line 43, ../sass/_colors.sass */
+/* line 41, ../sass/_colors.sass */
 .list a {
   -webkit-transition: color 0.2s ease-out;
   -webkit-transition-delay: 0.1s;
   -moz-transition: color 0.2s ease-out 0.1s;
   -o-transition: color 0.2s ease-out 0.1s;
   transition: color 0.2s ease-out 0.1s; }
-/* line 47, ../sass/_colors.sass */
+/* line 45, ../sass/_colors.sass */
 .list a:hover, .list .active a {
   color: #e6e6e6; }
 
-/* line 50, ../sass/_colors.sass */
+/* line 48, ../sass/_colors.sass */
 #details {
   color: #e6e6e6;
   background: #3b2d38; }
 
-/* line 54, ../sass/_colors.sass */
-.list li input[type="text"]:focus, #details:focus {
+/* line 52, ../sass/_colors.sass */
+.list li input[type="text"]:focus {
   background: rgba(255, 255, 255, 0.2); }
 
-/* line 58, ../sass/_colors.sass */
+/* line 56, ../sass/_colors.sass */
 .list li.today {
   border-left: 0.65em solid #f02475; }
 
-/* line 60, ../sass/_colors.sass */
+/* line 58, ../sass/_colors.sass */
 .list li.soon {
   border-left: 0.65em solid #f27435; }
 
-/* line 62, ../sass/_colors.sass */
+/* line 60, ../sass/_colors.sass */
 .list li {
   -webkit-transition: color 0.2s ease-out;
   -webkit-transition-delay: 0.1s;
@@ -147,14 +147,17 @@ body {
   transition: color 0.2s ease-out 0.1s;
   border-left: 0.65em solid #cfbe27; }
 
-/* line 69, ../sass/_colors.sass */
+/* line 67, ../sass/_colors.sass */
 .list ::-webkit-input-placeholder, .list :-moz-placeholder, .list ::-moz-placeholder, .list :-ms-input-placeholder {
   color: #72745c; }
 
 @media (min-width: 768px) {
-  /* line 73, ../sass/_colors.sass */
+  /* line 71, ../sass/_colors.sass */
   #details {
-    color: inherit; } }
+    color: inherit; }
+    /* line 73, ../sass/_colors.sass */
+    #details:focus {
+      background: rgba(255, 255, 255, 0.2); } }
 /* line 1, ../sass/_layout.sass */
 * {
   -webkit-box-sizing: border-box;
@@ -235,21 +238,21 @@ input[type="text"], #details {
   height: 11em;
   display: none;
   margin-top: 1em;
-  padding: 0.2em; }
+  padding: 0.2em;
+  position: relative;
+  z-index: 55; }
 
-/* line 61, ../sass/_layout.sass */
+/* line 63, ../sass/_layout.sass */
 #intro {
   display: none;
   margin-top: 4em; }
 
-/* line 65, ../sass/_layout.sass */
+/* line 67, ../sass/_layout.sass */
 .add {
-  float: right;
-  font-size: 2em;
-  line-height: 1.5em;
-  position: absolute;
-  top: 20%;
-  right: 0; }
+  font-size: 1.25em;
+  line-height: 1.2em;
+  display: block;
+  clear: both; }
 
 /* line 72, ../sass/_layout.sass */
 .delete {
@@ -284,25 +287,34 @@ input[type="text"], #details {
   /* line 92, ../sass/_layout.sass */
   #item-text {
     display: block;
-    margin-top: 2em; } }
+    margin-top: 2em; }
+
+  /* line 95, ../sass/_layout.sass */
+  .add {
+    font-size: 2em;
+    line-height: 1.5em;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    float: right; } }
 @media (min-width: 1025px) {
-  /* line 97, ../sass/_layout.sass */
+  /* line 103, ../sass/_layout.sass */
   .detail-column {
     width: 59%;
     padding-left: 3em;
     padding-right: 3em; }
 
-  /* line 101, ../sass/_layout.sass */
+  /* line 107, ../sass/_layout.sass */
   .list {
     width: 40%; } }
 @media (min-width: 1300px) {
-  /* line 105, ../sass/_layout.sass */
+  /* line 111, ../sass/_layout.sass */
   .detail-column {
     width: 66%;
     padding-left: 6em;
     padding-right: 6em; }
 
-  /* line 109, ../sass/_layout.sass */
+  /* line 115, ../sass/_layout.sass */
   .list {
     width: 33%; } }
 /* line 61, ../../../../../.rvm/gems/ruby-2.0.0-p195/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
@@ -328,8 +340,8 @@ p {
 
 /* line 19, ../sass/_typography.sass */
 li {
-  font-size: 1.2em;
-  line-height: 1.33333em; }
+  font-size: 0.9em;
+  line-height: 1.77778em; }
 
 /* line 22, ../sass/_typography.sass */
 .list li form input[type="text"], #details {
@@ -340,8 +352,8 @@ li {
 h1 {
   font-family: "Montserrat Subrayada", sans-serif;
   font-weight: 700;
-  font-size: 3.2em;
-  line-height: 1.5em; }
+  font-size: 2.4em;
+  line-height: 1.33333em; }
 
 /* line 31, ../sass/_typography.sass */
 h2 {
@@ -366,6 +378,23 @@ h2 {
 .delete {
   font-size: 0.7em; }
 
+@media (min-width: 768px) {
+  /* line 48, ../sass/_typography.sass */
+  h1 {
+    font-family: "Montserrat Subrayada", sans-serif;
+    font-weight: 700;
+    font-size: 3.2em;
+    line-height: 1.5em; }
+
+  /* line 53, ../sass/_typography.sass */
+  li {
+    font-size: 1.2em;
+    line-height: 1.33333em; }
+
+  /* line 56, ../sass/_typography.sass */
+  .list li form input[type="text"], #details {
+    font-family: inherit;
+    font-size: inherit; } }
 @font-face {
   font-family: 'fontello';
   src: url("../fonts/fontello.eot?65169114");

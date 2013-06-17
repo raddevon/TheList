@@ -57,17 +57,17 @@ input[type="text"], #details
     display: none
     margin-top: 1em
     padding: 0.2em
+    position: relative
+    z-index: 55
 
 #intro
     display: none
     margin-top: 4em
 
 .add
-    float: right
-    +adjust-font-size-to(32px)
-    position: absolute
-    top: 20%
-    right: 0
+    +adjust-font-size-to(20px)
+    display: block
+    clear: both
 
 .delete
     float: right
@@ -92,6 +92,12 @@ input[type="text"], #details
     #item-text
         display: block
         margin-top: 2em
+    .add
+        +adjust-font-size-to(32px)
+        position: absolute
+        top: 20%
+        right: 0
+        float: right
 
 +breakpoint($desktop)
     .detail-column

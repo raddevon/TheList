@@ -1,5 +1,3 @@
-@import breakpoint
-
 $gray       : #BCBDAC
 $dark-gray  : darken($gray, 30%)
 $pink       : #F02475
@@ -51,7 +49,7 @@ body
     color: $near-white
     background: $dark
 
-.list li input[type="text"]:focus, #details:focus
+.list li input[type="text"]:focus
     background: $lighten
 
 // List left border styling
@@ -72,3 +70,5 @@ body
 +breakpoint($tablet)
     #details
         color: inherit
+        &:focus
+            background: $lighten
